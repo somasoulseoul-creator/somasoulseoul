@@ -1,98 +1,60 @@
-import React from 'react';
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMA SOUL SEOUL | 2031</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&family=Playfair+Display:ital,wght@1,400&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #efefef; }
+        .serif { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="selection:bg-white selection:text-black">
 
-const SomaSoulSeoul = () => {
-  return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#efefef] font-sans selection:bg-white selection:text-black">
-      
-      {/* Precision Navigation */}
-      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-10 md:px-20">
-        <div className="group cursor-pointer">
-          {/* LOGO CRITICAL FIX: Ensure file is in /public/logo.png */}
-          <img 
-            src="/logo.png" 
-            alt="SOMA SOUL SEOUL" 
-            className="h-6 w-auto brightness-0 invert tracking-tighter"
-            onError={(e) => { e.target.style.display='none'; }} 
-          />
-          <span className="text-[10px] tracking-[0.5em] font-bold uppercase opacity-50 group-hover:opacity-100 transition-opacity">
-            SOMA SOUL SEOUL
-          </span>
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-10 md:px-20 bg-[#0a0a0a]/80 backdrop-blur-md">
+        <div class="flex flex-col">
+            <img src="/logo.png" alt="SOMA SOUL SEOUL" class="h-6 w-auto mb-1 invert brightness-0" onerror="this.style.display='none'">
+            <span class="text-[9px] tracking-[0.5em] font-bold uppercase opacity-60">SOMA SOUL SEOUL</span>
         </div>
         
-        <div className="flex space-x-12 text-[9px] uppercase tracking-[0.4em] font-light">
-          <a href="#" className="hover:line-through">Mission</a>
-          <a href="#" className="hover:line-through">Protocol</a>
-          <a href="#" className="hover:line-through">2031</a>
+        <div class="flex space-x-12 text-[9px] uppercase tracking-[0.4em] font-light">
+            <a href="#" class="hover:line-through transition-all">Mission</a>
+            <a href="#" class="hover:line-through transition-all">2031</a>
         </div>
-      </nav>
+    </nav>
 
-      {/* Hero Section: The "Million Dollar" Look */}
-      <main className="relative pt-48 pb-20 px-8 md:px-20">
+    <main class="relative pt-64 pb-32 px-8 md:px-20 overflow-hidden">
         
-        {/* Background Decorative Text - Subtle */}
-        <div className="absolute top-40 right-10 opacity-5 select-none pointer-events-none">
-          <span className="text-[15vw] font-bold leading-none uppercase">Seoul</span>
+        <div class="absolute top-48 right-[-5%] opacity-[0.03] select-none pointer-events-none">
+            <span class="text-[25vw] font-bold leading-none uppercase">SEOUL</span>
         </div>
 
-        <section className="relative z-10 max-w-6xl">
-          {/* The Status Statement */}
-          <div className="mb-12 flex items-center space-x-4">
-            <span className="h-[1px] w-12 bg-white opacity-30"></span>
-            <span className="text-[10px] uppercase tracking-[0.6em] text-white opacity-60">
-              System Update: 2026.03.01
-            </span>
-          </div>
-
-          {/* Main Headline */}
-          <h1 className="text-5xl md:text-8xl font-extralight tracking-tight leading-[0.9] mb-16">
-            Architecting the <br />
-            <span className="font-serif italic text-gray-400">Resilient Lineage</span>.
-          </h1>
-
-          {/* Korean Phrase as Art */}
-          <div className="mb-20">
-            <p className="text-2xl md:text-3xl font-light text-white opacity-90 tracking-widest">
-              가장 고귀한 것을 지키는 힘, <br />
-              <span className="opacity-40">새로운 시대를 선도하는 정신.</span>
-            </p>
-          </div>
-
-          {/* Forensic Mission Statement */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 border-t border-white/10 pt-16">
-            <div>
-              <h3 className="text-[10px] uppercase tracking-[0.4em] mb-8 text-gray-500 font-bold">
-                01 / The Mission
-              </h3>
-              <p className="text-lg leading-relaxed font-light text-gray-300">
-                The current global structure is fading. We don't just survive the transition; we **lead the outcome**. Soma Soul Seoul is the blueprint for the **middle-class family** to weaponize clarity and **protect the future** of their lineage heading into 2031.
-              </p>
+        <section class="relative z-10 max-w-6xl">
+            <div class="mb-16 flex items-center space-x-4">
+                <span class="h-[1px] w-12 bg-white opacity-30"></span>
+                <span class="text-[10px] uppercase tracking-[0.6em] text-white opacity-50">
+                    Protocol Initialized: March 2026
+                </span>
             </div>
-            
-            <div className="flex flex-col justify-end">
-              <h3 className="text-[10px] uppercase tracking-[0.4em] mb-8 text-gray-500 font-bold">
-                02 / The Protocol
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-500 uppercase tracking-widest">
-                Transparency is our only mask. <br />
-                Direct action is our only currency. <br />
-                The family is our only priority.
-              </p>
-              
-              <button className="mt-12 w-fit px-12 py-5 border border-white/20 text-[10px] uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all duration-500">
-                Initialize Entry
-              </button>
+
+            <h1 class="text-5xl md:text-8xl font-extralight tracking-tight leading-[0.9] mb-20">
+                Architecting the <br />
+                <span class="serif italic text-gray-500">Resilient Lineage</span>.
+            </h1>
+
+            <div class="mb-24">
+                <p class="text-2xl md:text-4xl font-light text-white opacity-90 tracking-widest leading-relaxed">
+                    가장 고귀한 것을 지키는 힘, <br />
+                    <span class="opacity-30">새로운 시대를 선도하는 정신.</span>
+                </p>
             </div>
-          </div>
-        </section>
-      </main>
 
-      {/* Footer Minimalist */}
-      <footer className="px-8 md:px-20 py-10 opacity-20 text-[9px] tracking-[0.3em] uppercase">
-        © 2026 Soma Soul Seoul / Private Protocol / 2031 Horizon
-      </footer>
-
-    </div>
-  );
-};
-
-export default SomaSoulSeoul;
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 border-t border-white/10 pt-20">
+                <div>
+                    <h3 class="text-[10px] uppercase tracking-[0.5em] mb-10 text-gray-500 font-bold">
+                        Phase 01 / The Mission
+                    </h3>
+                    <p class="text-xl leading-relaxed font-light text-gray-300">
+                        The current global system is not broken—
