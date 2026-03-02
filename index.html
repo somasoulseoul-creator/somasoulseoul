@@ -15,14 +15,25 @@
 <body class="selection:bg-white selection:text-black">
 
     <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-10 md:px-20 bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/5">
-    <div class="flex space-x-12 text-[9px] uppercase tracking-[0.4em] font-light text-gray-400">
-        <a href="index.html#mission" class="hover:text-white transition-colors">Mission</a>
-        <a href="protocol.html" class="hover:text-white transition-all">Protocol</a>
-    </div>
-</nav>
+        <a href="index.html" class="flex items-center space-x-6 group cursor-pointer">
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-yellow-700 to-yellow-500 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <div class="relative h-14 w-14 bg-white rounded-full p-1 border border-white/10 overflow-hidden shadow-2xl flex items-center justify-center">
+                    <img src="logo.png" alt="SOMA SOUL SEOUL" class="h-full w-full object-contain scale-110" style="filter: none !important;">
+                </div>
+            </div>
+            <div class="flex flex-col text-left">
+                <span class="text-[10px] tracking-[0.5em] font-bold uppercase text-white leading-none mb-1">SOMA SOUL SEOUL</span>
+                <span class="text-[8px] tracking-[0.3em] font-light uppercase text-gray-500">Sovereign Humanity // 2031</span>
+            </div>
+        </a>
+        <div class="flex space-x-12 text-[9px] uppercase tracking-[0.4em] font-light text-gray-400">
+            <a href="#mission" class="hover:text-white transition-colors">Mission</a>
+            <a href="protocol.html" class="hover:text-white transition-all">Protocol</a>
+        </div>
+    </nav>
 
     <main class="relative pt-64 pb-32 px-8 md:px-20 overflow-hidden">
-        
         <div class="absolute top-48 right-[-5%] opacity-[0.03] select-none pointer-events-none">
             <span class="text-[25vw] font-bold leading-none uppercase">SEOUL</span>
         </div>
@@ -85,31 +96,4 @@
         </section>
 
         <section id="newsletter" class="relative z-10 py-32 border-t border-white/10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-[10px] uppercase tracking-[0.8em] text-yellow-600 font-bold mb-8">Intelligence Access</h2>
-                <p class="text-3xl md:text-5xl font-extralight tracking-tighter leading-tight mb-8">
-                    The 2031 Dispatch. <br />
-                    <span class="serif italic text-gray-500">Unfiltered clarity for the sovereign home.</span>
-                </p>
-                <p class="kr-serif text-lg text-gray-400 mb-12 opacity-80">우리 가족을 위한 주체성을 지키는 미래 생존 전략.</p>
-                <div class="max-w-md mx-auto">
-                    <form action="#" class="flex flex-col space-y-4">
-                        <div class="relative group">
-                            <input type="email" placeholder="COMMUNICATION@PROTOCOL.COM" class="w-full bg-transparent border-b border-white/20 py-4 text-[10px] tracking-[0.3em] text-white focus:outline-none focus:border-yellow-600 transition-colors uppercase placeholder:text-gray-700">
-                            <div class="absolute bottom-0 left-0 w-0 h-[1px] bg-yellow-600 group-focus-within:w-full transition-all duration-700"></div>
-                        </div>
-                        <button type="submit" class="mt-8 w-full py-5 border border-white/10 text-[9px] uppercase tracking-[0.5em] font-bold hover:bg-white hover:text-black transition-all duration-500 active:scale-95">REQUEST ACCESS // 구독 신청</button>
-                    </form>
-                    <p class="mt-6 text-[8px] uppercase tracking-[0.2em] text-gray-600">100% Transparency. No Mask. No Spam.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="px-8 md:px-20 py-16 border-t border-white/5 flex justify-between items-center opacity-30 text-[9px] tracking-[0.4em] uppercase">
-        <span>© 2026 Soma Soul Seoul</span>
-        <span>2031 Horizon Protocol</span>
-    </footer>
-
-</body>
-</html>
+            <div class="max-w-4xl mx-auto text-
