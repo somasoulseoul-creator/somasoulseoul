@@ -7,21 +7,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-white text-slate-900 selection:bg-amber-100">
 
-    <nav class="border-b border-slate-100 py-6 px-8 flex justify-between items-center sticky top-0 bg-white/80 backdrop-blur-md z-50">
-        <div class="text-2xl font-bold tracking-tighter text-amber-600">SOMASOUL<span class="text-slate-400">SEOUL</span></div>
+    <nav class="border-b border-slate-100 py-4 px-8 flex justify-between items-center sticky top-0 bg-white/90 backdrop-blur-md z-50">
+        <div class="flex items-center space-x-4">
+            <img src="logo.png" alt="SomaSoul Logo" class="h-12 w-auto object-contain">
+            <div class="text-2xl font-bold tracking-tighter text-amber-600 uppercase">
+                Somasoul<span class="text-slate-400">seoul</span>
+            </div>
+        </div>
         <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-500">
-            <a href="#" class="hover:text-amber-600">2031 Vision</a>
-            <a href="#" class="hover:text-amber-600">Neural Architecture</a>
-            <a href="#" class="hover:text-amber-600">Forensic Defense</a>
+            <a href="#vision" class="hover:text-amber-600 transition-colors">2031 Vision</a>
+            <a href="#neural" class="hover:text-amber-600 transition-colors">Neural Architecture</a>
+            <a href="#defense" class="hover:text-amber-600 transition-colors">Forensic Defense</a>
         </div>
     </nav>
 
-    <section class="max-w-7xl mx-auto pt-24 pb-16 px-8">
+    <section id="vision" class="max-w-7xl mx-auto pt-24 pb-16 px-8">
         <div class="max-w-4xl">
             <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[0.9] text-slate-900">
                 Architects of the <span class="text-amber-500">2031</span> Era.
@@ -30,31 +35,11 @@
                 Protecting the Resilient Lineage through **Neural Architecture** and **Forensic Strategy**. We build the foundations today for the leadership of tomorrow.
             </p>
             <p class="text-lg text-slate-400 mb-12 italic">가장 고귀한 것을 지키는 힘, 새로운 시대를 선도하는 정신.</p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <div class="bg-slate-900 text-white px-10 py-4 text-lg font-semibold rounded-full text-center">Join the Protocol</div>
-                <div class="border border-slate-200 text-slate-600 px-10 py-4 text-lg font-semibold rounded-full text-center">Forensic Audit</div>
+            <div class="flex flex-col sm:flex-row gap-4 text-center">
+                <a href="#" class="bg-slate-900 text-white px-10 py-4 text-lg font-semibold rounded-full hover:bg-amber-600 transition-all">Join the Protocol</a>
+                <a href="#defense" class="border border-slate-200 text-slate-600 px-10 py-4 text-lg font-semibold rounded-full hover:border-slate-900 transition-all">Forensic Audit</a>
             </div>
         </div>
     </section>
 
-    <section class="bg-slate-50 py-20 px-8">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-slate-100">
-                <h3 class="text-3xl font-bold mb-4">The Waldorf Insight</h3>
-                <p class="text-slate-500 text-lg">Prioritizing neural development and organic growth. We delay formal reading to build robust, independent thinkers.</p>
-                <div class="mt-6 text-amber-600 font-mono text-sm uppercase tracking-widest">[ Neural Architecture ]</div>
-            </div>
-            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-slate-100">
-                <h3 class="text-3xl font-bold mb-4">The Seattle Protocol</h3>
-                <p class="text-slate-500 text-lg">Forensic defense against administrative overreach. Protecting family assets from bureaucratic predation.</p>
-                <div class="mt-6 text-slate-400 font-mono text-sm uppercase tracking-widest">[ Forensic Defense ]</div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 text-center text-slate-300 text-xs tracking-widest uppercase">
-        Preparing for the New Era: 2031 &copy; SomaSoul Seoul
-    </footer>
-
-</body>
-</html>
+    <section id="neural"
