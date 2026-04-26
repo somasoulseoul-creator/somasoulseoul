@@ -21,21 +21,26 @@
             scroll-behavior: smooth;
         }
 
-        /* Nav */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            padding: 40px 5%;
+            align-items: center;
+            padding: 30px 5%;
             position: absolute;
             width: 100%;
-            z-index: 10;
+            z-index: 100;
         }
 
-        .logo-wrap {
+        .nav-left {
             display: flex;
-            flex-direction: column;
-            gap: 5px;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-img {
+            height: 60px; /* Adjust based on your actual logo file */
+            width: auto;
         }
 
         .logo-text {
@@ -49,14 +54,24 @@
 
         .nav-right {
             text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
         }
 
-        .vanguard-label {
-            font-size: 0.7rem;
+        .status-notice {
+            font-size: 0.65rem;
             letter-spacing: 1px;
-            color: #999;
-            margin-bottom: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .status-notice .kr {
             display: block;
+            font-size: 0.6rem;
+            margin-top: 2px;
         }
 
         .apply-link {
@@ -66,7 +81,8 @@
             text-decoration: none;
             color: var(--charcoal);
             border-bottom: 2px solid var(--charcoal);
-            padding-bottom: 3px;
+            padding-bottom: 2px;
+            margin-top: 5px;
         }
 
         /* Hero */
@@ -165,11 +181,15 @@
 <body>
 
     <nav>
-        <div class="logo-wrap">
+        <div class="nav-left">
+            <img src="https://somasoulseoul-oferu559e-somasoulseoul-1339s-projects.vercel.app/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
             <div class="logo-text">SOMA<br>SOUL<br>SEOUL</div>
         </div>
         <div class="nav-right">
-            <span class="vanguard-label">Join the Vanguard</span>
+            <div class="status-notice">
+                Mailing list under construction. Ready May 23rd.
+                <span class="kr">뉴스레터 준비 중. 5월 23일 오픈 예정.</span>
+            </div>
             <a href="#" class="apply-link">APPLY</a>
         </div>
     </nav>
