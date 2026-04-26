@@ -3,66 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOMA SOUL SEOUL | 2031</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Soma Soul Seoul | Sovereign Growth</title>
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #ffffff; 
-            color: #1a1a1a;
-            -webkit-font-smoothing: antialiased;
+        :root {
+            --warm-neutral: #f9f7f2;
+            --deep-text: #2c2c2c;
+            --accent-gold: #c5a059;
+            --soft-gray: #757575;
         }
-        .gold-text { color: #d4b465; }
-        .gold-border { border-color: #d4b465; }
-        .tracking-ultra { letter-spacing: 0.4em; }
-        .logo-container img { height: 100px; width: auto; } /* Increased logo size */
-        .brand-text { font-size: 2.2rem; } /* Increased brand text size */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--warm-neutral);
+            color: var(--deep-text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .title-group h1 {
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: -1px;
+            font-size: 2.5rem;
+        }
+
+        .architecture-subtitle {
+            margin-top: 10px;
+            font-size: 1.1rem; /* Smaller size as requested */
+            color: var(--soft-gray);
+            font-weight: 400;
+        }
+
+        .newsletter-container {
+            text-align: right;
+            max-width: 300px;
+        }
+
+        .newsletter-container input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: transparent;
+            font-size: 0.9rem;
+            width: 180px;
+        }
+
+        .newsletter-container button {
+            padding: 8px 16px;
+            background: var(--deep-text);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .construction-note {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        main {
+            flex: 1;
+            padding: 0 5% 80px;
+            max-width: 800px;
+        }
+
+        .philosophy-section {
+            margin-top: 100px;
+        }
+
+        .philosophy-text {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--deep-text);
+        }
+
+        .korean-philosophy {
+            display: block;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: var(--soft-gray);
+        }
+
+        footer {
+            padding: 40px 5%;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: var(--soft-gray);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            .newsletter-container {
+                text-align: left;
+                margin-top: 30px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <header class="px-6 py-10 md:px-12 flex justify-between items-center bg-white">
-        <div class="flex items-center gap-6">
-            <div class="logo-container">
-                <img src="logo.png" alt="Soma Soul Seoul Logo">
-            </div>
-            <div class="brand-text font-extrabold tracking-tighter uppercase italic">
-                Somasoul<span class="text-zinc-400">seoul</span>
+    <header>
+        <div class="title-group">
+            <h1>Soma Soul Seoul</h1>
+            <div class="architecture-subtitle">
+                The Architecture of Sovereign Growth / 주권적 성장의 아키텍처
             </div>
         </div>
-        
-        <nav class="hidden md:flex gap-12 text-[11px] font-bold tracking-widest uppercase text-zinc-400">
-            <a href="#insights" class="hover:text-black transition-colors">World Insights</a>
-            <a href="#archive" class="text-black border-b-2 gold-border pb-1">Archive 자료실</a>
-            <a href="#instagram" class="hover:text-black transition-colors">Instagram</a>
-        </nav>
+
+        <div class="newsletter-container">
+            <input type="email" placeholder="Email address">
+            <button>Join</button>
+            <span class="construction-note">Still under construction - coming soon</span>
+        </div>
     </header>
 
     <main>
-        <section class="px-6 md:px-12 pt-32 pb-40 max-w-7xl">
-            <p class="text-[11px] tracking-ultra text-zinc-400 uppercase mb-8">
-                Inspired by sense • Built for 2031
-            </p>
-            
-            <h2 class="text-7xl md:text-8xl font-extrabold tracking-tight leading-[1.1] mb-12">
-                The Architecture of <br>
-                <span class="gold-text">Sovereign Growth.</span>
-            </h2>
-
-            <p class="text-2xl md:text-3xl text-zinc-500 font-light max-w-3xl leading-relaxed">
-                Instagram provides the inspiration. Somasoul Seoul provides the forensic evidence.
-            </p>
-        </section>
-
-        <section class="bg-[#0f141e] py-32 px-6 md:px-12">
-            <div class="max-w-7xl">
-                <h3 class="text-3xl md:text-5xl font-extrabold tracking-tighter gold-text uppercase">
-                    The 2031 World Education Report
-                </h3>
+        <section class="philosophy-section">
+            <div class="philosophy-text">
+                Nobody knows what comes to the future as everything changes in every second, 
+                but I will guide you to stay grounded, keep your family bonded, and build 
+                your family strong so whatever comes to our future we will walk through 
+                tougher and survive.
+            </div>
+            <div class="korean-philosophy">
+                매 순간 모든 것이 변하는 미래에 무엇이 올지 아무도 알 수 없지만, 
+                여러분이 중심을 잡고 가족의 유대를 지키며 강한 가정을 세울 수 있도록 
+                제가 인도하겠습니다. 우리 미래에 어떤 일이 닥치더라도 우리는 더 단단하게 
+                함께 걸어나가며 살아남을 것입니다.
             </div>
         </section>
     </main>
+
+    <footer>
+        &copy; 2026 Soma Soul Seoul. Leading humanity into the new era.
+    </footer>
 
 </body>
 </html>
