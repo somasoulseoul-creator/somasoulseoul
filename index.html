@@ -3,144 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOMASOULSEOUL | 2031 Foundation</title>
+    <title>Soma Soul Seoul | The Architecture of Sovereign Growth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #D4AF37;
-            --gold-light: #F2D479;
-            --black: #050505;
-            --white: #FFFFFF;
-            --gray: #1A1A1A;
+            --gold: #C5A059;
+            --charcoal: #1A1A1A;
+            --off-white: #F9F9F9;
         }
 
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Pretendard', 'Inter', -apple-system, sans-serif;
+            background-color: var(--off-white);
+            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        body {
-            background-color: var(--black);
-            color: var(--white);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        /* --- Navigation: Authority Scale --- */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 2rem 5%;
-            background: linear-gradient(to bottom, var(--black), transparent);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            position: absolute;
+            width: 90%;
+            z-index: 100;
         }
 
         .logo {
-            font-weight: 900;
-            letter-spacing: -1px; /* Modern tight kerning */
-            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-left: 2rem;
             text-transform: uppercase;
-            font-size: 2.2rem; /* Significantly Bigger */
-            line-height: 1;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
         }
 
-        .logo span {
-            color: var(--gold);
+        .nav-links a:hover {
+            border-bottom: 1px solid var(--gold);
         }
 
-        /* --- Hero: The Stand --- */
-        .hero {
-            min-height: 100vh;
+        /* Hero Section */
+        header {
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 0 10%;
-            background: radial-gradient(circle at 90% 10%, #1a1a1a 0%, #050505 100%);
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            line-height: 1.1;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            max-width: 900px;
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin: 0;
+            font-weight: 400;
         }
 
-        .gold-text {
+        .subtitle {
+            font-size: 1rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 1rem 0 3rem 0;
+        }
+
+        .cta-button {
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--charcoal);
+            background: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.4s;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background: var(--charcoal);
+            color: var(--off-white);
+        }
+
+        /* Mission Section */
+        .vision-section {
+            padding: 100px 10%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            padding: 40px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
             color: var(--gold);
         }
 
-        /* --- Philosophy: Dual Language Forensic Grid --- */
-        .philosophy-section {
-            padding: 100px 10%;
-            border-top: 1px solid var(--gray);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        /* Footer */
+        footer {
+            padding: 50px 10%;
+            border-top: 1px solid #eee;
+            font-size: 0.7rem;
+            text-align: center;
+            letter-spacing: 1px;
         }
 
-        .lang-block {
-            border-left: 1px solid var(--gray);
-            padding-left: 30px;
-        }
-
-        .lang-block.kr {
-            border-left: 1px solid var(--gold);
-            word-break: keep-all;
-        }
-
-        .philosophy-text {
-            font-size: 1.15rem;
-            color: #ccc;
-            margin-bottom: 1.5rem;
-        }
-
-        .highlight {
-            color: var(--white);
-            font-weight: 700;
-        }
-
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 900px) {
-            .philosophy-section { grid-template-columns: 1fr; }
-            .logo { font-size: 1.8rem; }
-            .hero { padding-top: 120px; }
+        .vanguard-badge {
+            font-size: 0.6rem;
+            color: #999;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">SOMASOUL<span>SEOUL</span></div>
-        <div style="font-size: 0.7rem; letter-spacing: 2px; opacity: 0.5;">VISION 2031</div>
+        <div class="logo">SOMA SOUL SEOUL</div>
+        <div class="nav-links">
+            <a href="#vision">The 2031 Vision</a>
+            <a href="#philosophy">Waldorf Insight</a>
+            <a href="#">Apply</a>
+        </div>
     </nav>
 
-    <section class="hero">
-        <h1>We cannot predict every turn, <br>but we choose <span class="gold-text">how we stand.</span></h1>
-        <div style="width: 80px; height: 4px; background: var(--gold); margin: 2rem 0;"></div>
-    </section>
-
-    <section class="philosophy-section">
-        <div class="lang-block">
-            <p class="philosophy-text">We cannot predict every turn the future will take—because the world shifts with every passing moment. <span class="highlight">But we can choose how we stand within it.</span></p>
-            <p class="philosophy-text">SOMASOULSEOUL will help you stay grounded when things feel uncertain. We will help you protect what matters most—your family, your connection, your foundation.</p>
-            <p class="philosophy-text"><span class="highlight">Together, we will build a home that is not easily shaken.</span> So whatever comes—whether challenge or change—you won’t face it unprepared.</p>
-            <p class="philosophy-text" style="color:var(--gold);">You will face it steady, united, and stronger than before. And no matter what the future brings, we will move forward—together—and endure.</p>
-        </div>
-
-        <div class="lang-block kr">
-            <p class="philosophy-text">우리는 미래에 어떤 일이 일어날지 모두 알 수는 없습니다. 세상은 매 순간 변하고 있기 때문입니다. <span class="highlight">하지만 그 속에서 어떻게 서 있을지는 우리가 선택할 수 있습니다.</span></p>
-            <p class="philosophy-text">SOMASOULSEOUL이 여러분이 흔들리지 않도록 중심을 잡을 수 있게 돕겠습니다. 가장 소중한 것—가족, 관계, 그리고 삶의 기반—을 지킬 수 있도록 함께하겠습니다.</p>
-            <p class="philosophy-text"><span class="highlight">그리고 쉽게 무너지지 않는 단단한 가정을 함께 만들어가겠습니다.</span> 그래서 어떤 변화와 어려움이 오더라도 준비되지 않은 상태로 맞이하지 않게 될 것입니다.</p>
-            <p class="philosophy-text" style="color:var(--gold);">여러분은 더 단단하고, 하나로 연결된 상태로 그것을 마주하게 될 것입니다. 그리고 미래가 무엇을 가져오든, 우리는 함께 앞으로 나아가며 결국 이겨낼 것입니다.</p>
-        </div>
-    </section>
-
-</body>
-</html>
+    <header>
+        <h1>Soma Soul Seoul</h1>
+        <div class="subtitle">THE ARCHITECTURE OF SOVEREIGN GROWTH</div>
+        <p style="max-width: 600px; margin-bottom: 40px; font-weight: 300;">
+            Preparing the vanguard for the era of 2031. Where forensic
