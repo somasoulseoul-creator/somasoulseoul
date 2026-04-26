@@ -1,160 +1,35 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soma Soul Seoul | The Architecture of Sovereign Growth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #C5A059;
-            --charcoal: #1A1A1A;
-            --off-white: #F9F9F9;
-        }
+We cannot predict every turn the future will take—because the world shifts with every passing moment. But we can choose how we stand within it.
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background-color: var(--off-white);
-            color: var(--charcoal);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+I will help you stay grounded when things feel uncertain.
+I will help you protect what matters most—your family, your connection, your foundation.
+And together, we will build a home that is not easily shaken.
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 5%;
-            position: absolute;
-            width: 90%;
-            z-index: 100;
-        }
+Through **SomaSoulSeoul**, you will have guidance—not just to endure, but to move through challenges with clarity and strength. You will not walk this path alone.
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-        }
+Together, we will build a strong, connected community—one that supports our families and nurtures our children.
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--charcoal);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            margin-left: 2rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid transparent;
-            transition: 0.3s;
-        }
+So whatever comes—whether challenge or change—you won’t face it unprepared.
+You will face it steady, united, and stronger than before.
 
-        .nav-links a:hover {
-            border-bottom: 1px solid var(--gold);
-        }
+And no matter what the future brings, we will move forward—together—and endure.
 
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-        }
+---
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            margin: 0;
-            font-weight: 400;
-        }
+우리는 미래에 어떤 일이 일어날지 모두 알 수는 없습니다.
+세상은 매 순간 변하고 있기 때문입니다. 하지만 그 속에서 어떻게 서 있을지는 우리가 선택할 수 있습니다.
 
-        .subtitle {
-            font-size: 1rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin: 1rem 0 3rem 0;
-        }
+제가 여러분이 흔들리지 않도록 중심을 잡을 수 있게 돕겠습니다.
+가장 소중한 것—가족, 관계, 그리고 삶의 기반—을 지킬 수 있도록 함께하겠습니다.
+그리고 쉽게 무너지지 않는 단단한 가정을 함께 만들어가겠습니다.
 
-        .cta-button {
-            padding: 1rem 2.5rem;
-            border: 1px solid var(--charcoal);
-            background: transparent;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: 0.4s;
-            font-size: 0.9rem;
-        }
+**SomaSoulSeoul**을 통해, 단순히 버티는 것이 아니라
+어려움을 지나갈 수 있도록 돕는 길잡이가 되어드리겠습니다.
+이 길은 혼자가 아니라, 함께 걷는 길입니다.
 
-        .cta-button:hover {
-            background: var(--charcoal);
-            color: var(--off-white);
-        }
+우리는 함께, 가족과 아이들을 위한
+더 강하고 연결된 공동체를 만들어갈 것입니다.
 
-        /* Mission Section */
-        .vision-section {
-            padding: 100px 10%;
-            background: #fff;
-            text-align: center;
-        }
+그래서 어떤 변화와 어려움이 오더라도 준비되지 않은 상태로 맞이하지 않게 될 것입니다.
+여러분은 더 단단하고, 하나로 연결된 상태로 그것을 마주하게 될 것입니다.
 
-        .vision-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .card {
-            padding: 40px;
-            border: 1px solid #eee;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--gold);
-        }
-
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold);
-        }
-
-        /* Footer */
-        footer {
-            padding: 50px 10%;
-            border-top: 1px solid #eee;
-            font-size: 0.7rem;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .vanguard-badge {
-            font-size: 0.6rem;
-            color: #999;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">SOMA SOUL SEOUL</div>
-        <div class="nav-links">
-            <a href="#vision">The 2031 Vision</a>
-            <a href="#philosophy">Waldorf Insight</a>
-            <a href="#">Apply</a>
-        </div>
-    </nav>
-
-    <header>
-        <h1>Soma Soul Seoul</h1>
-        <div class="subtitle">THE ARCHITECTURE OF SOVEREIGN GROWTH</div>
-        <p style="max-width: 600px; margin-bottom: 40px; font-weight: 300;">
-            Preparing the vanguard for the era of 2031. Where forensic
+그리고 미래가 무엇을 가져오든, 우리는 함께 앞으로 나아가며 결국 이겨낼 것입니다.
