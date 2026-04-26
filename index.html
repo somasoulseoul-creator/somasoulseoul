@@ -3,156 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soma Soul Seoul | Sovereign Growth</title>
+    <title>Soma Soul Seoul</title>
     <style>
-        :root {
-            --warm-neutral: #f9f7f2;
-            --deep-text: #2c2c2c;
-            --accent-gold: #c5a059;
-            --soft-gray: #757575;
-        }
-
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--warm-neutral);
-            color: var(--deep-text);
-            line-height: 1.6;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
+            align-items: center;
             min-height: 100vh;
+            text-align: center;
         }
 
         header {
-            padding: 40px 5%;
+            width: 100%;
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            justify-content: flex-end;
+            box-sizing: border-box;
         }
 
-        .title-group h1 {
-            margin: 0;
-            font-weight: 300;
-            letter-spacing: -1px;
-            font-size: 2.5rem;
-        }
-
-        .architecture-subtitle {
-            margin-top: 10px;
-            font-size: 1.1rem; /* Smaller size as requested */
-            color: var(--soft-gray);
-            font-weight: 400;
-        }
-
-        .newsletter-container {
+        .newsletter-box {
             text-align: right;
-            max-width: 300px;
+            padding: 10px;
         }
 
-        .newsletter-container input {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            background: transparent;
-            font-size: 0.9rem;
-            width: 180px;
-        }
-
-        .newsletter-container button {
-            padding: 8px 16px;
-            background: var(--deep-text);
+        .newsletter-box input {
+            background: #2a2a2a;
+            border: 1px solid #444;
             color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+
+        .newsletter-box button {
+            background: #ffffff;
+            color: #1a1a1a;
             border: none;
+            padding: 5px 15px;
             cursor: pointer;
-            font-size: 0.9rem;
-            transition: opacity 0.2s;
+            font-size: 0.8rem;
         }
 
-        .construction-note {
+        .construction-tag {
             display: block;
-            font-size: 0.75rem;
-            color: var(--accent-gold);
+            font-size: 0.7rem;
+            color: #888;
             margin-top: 5px;
-            font-style: italic;
         }
 
-        main {
-            flex: 1;
-            padding: 0 5% 80px;
+        .main-content {
+            margin-top: 50px;
             max-width: 800px;
+            padding: 0 20px;
         }
 
-        .philosophy-section {
-            margin-top: 100px;
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in;
         }
 
-        .philosophy-text {
-            font-size: 1.4rem;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
             font-weight: 300;
-            color: var(--deep-text);
         }
 
-        .korean-philosophy {
-            display: block;
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: var(--soft-gray);
+        .subtitle {
+            font-size: 0.95rem; /* Made smaller as requested */
+            color: #cccccc;
+            margin-bottom: 5px;
+        }
+
+        .subtitle-kr {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .philosophy-container {
+            margin-top: 60px;
+            line-height: 1.8;
+        }
+
+        .philosophy-en {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #eeeeee;
+        }
+
+        .philosophy-kr {
+            font-size: 1rem;
+            color: #aaaaaa;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         footer {
-            padding: 40px 5%;
-            border-top: 1px solid #eee;
+            margin-top: auto;
+            padding: 40px;
             font-size: 0.8rem;
-            color: var(--soft-gray);
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-            }
-            .newsletter-container {
-                text-align: left;
-                margin-top: 30px;
-            }
+            color: #555;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="title-group">
-            <h1>Soma Soul Seoul</h1>
-            <div class="architecture-subtitle">
-                The Architecture of Sovereign Growth / 주권적 성장의 아키텍처
-            </div>
-        </div>
-
-        <div class="newsletter-container">
-            <input type="email" placeholder="Email address">
-            <button>Join</button>
-            <span class="construction-note">Still under construction - coming soon</span>
+        <div class="newsletter-box">
+            <input type="email" placeholder="Newsletter">
+            <button>Sign Up</button>
+            <span class="construction-tag">it is still under the construction</span>
         </div>
     </header>
 
-    <main>
-        <section class="philosophy-section">
-            <div class="philosophy-text">
+    <div class="main-content">
+        <img src="logo.png" alt="Soma Soul Seoul Logo" class="logo">
+        
+        <h1>Soma Soul Seoul</h1>
+        
+        <div class="subtitle">The Architecture of Sovereign Growth</div>
+        <div class="subtitle-kr">주권적 성장의 아키텍처</div>
+
+        <div class="philosophy-container">
+            <p class="philosophy-en">
                 Nobody knows what comes to the future as everything changes in every second, 
                 but I will guide you to stay grounded, keep your family bonded, and build 
                 your family strong so whatever comes to our future we will walk through 
                 tougher and survive.
-            </div>
-            <div class="korean-philosophy">
+            </p>
+            <p class="philosophy-kr">
                 매 순간 모든 것이 변하는 미래에 무엇이 올지 아무도 알 수 없지만, 
                 여러분이 중심을 잡고 가족의 유대를 지키며 강한 가정을 세울 수 있도록 
                 제가 인도하겠습니다. 우리 미래에 어떤 일이 닥치더라도 우리는 더 단단하게 
                 함께 걸어나가며 살아남을 것입니다.
-            </div>
-        </section>
-    </main>
+            </p>
+        </div>
+    </div>
 
     <footer>
-        &copy; 2026 Soma Soul Seoul. Leading humanity into the new era.
+        2031 Vision | Soma Soul Seoul
     </footer>
 
 </body>
