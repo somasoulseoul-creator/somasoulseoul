@@ -8,33 +8,190 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a;
+            background-color: #000000;
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
-            text-align: center;
+            overflow-x: hidden;
         }
 
-        header {
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: flex-end;
-            box-sizing: border-box;
-        }
-
-        .newsletter-box {
+        /* Top Right Newsletter Section */
+        .header-top {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             text-align: right;
-            padding: 10px;
+            z-index: 100;
         }
 
-        .newsletter-box input {
-            background: #2a2a2a;
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .newsletter-form input {
+            background: transparent;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            width: 200px;
+        }
+
+        .newsletter-form button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .construction-note {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Main Content Styling */
+        .content-container {
+            text-align: center;
+            max-width: 900px;
+            padding: 40px;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 200;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .architecture-text {
+            font-size: 0.9rem; /* Smaller size */
+            color: #888;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .architecture-kr {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Philosophy Toggle */
+        .philosophy-trigger {
+            margin-top: 50px;
+            background: transparent;
             border: 1px solid #444;
-            color: white;
+            color: #888;
+            padding: 10px 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .philosophy-trigger:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        #philosophy-content {
+            display: none;
+            margin-top: 40px;
+            text-align: center;
+            max-width: 700px;
+            line-height: 1.8;
+            padding: 20px;
+            border-top: 1px solid #222;
+        }
+
+        .philosophy-en {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-kr {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 20px;
+            font-size: 0.7rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-top">
+        <div class="newsletter-form">
+            <input type="email" placeholder="Email for Newsletter">
+            <button>Sign Up</button>
+            <span class="construction-note">it is still under the construction</span>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <img src="logo.png" alt="Soma Soul Seoul" class="logo">
+        
+        <h1>Soma Soul Seoul</h1>
+        
+        <div class="architecture-text">The Architecture of Sovereign Growth</div>
+        <div class="architecture-kr">주권적 성장의 아키텍처</div>
+
+        <button class="philosophy-trigger" onclick="togglePhilosophy()">Philosophy</button>
+
+        <div id="philosophy-content">
+            <p class="philosophy-en">
+                Nobody knows what comes to the future as everything changes in every second, 
+                but I will guide you to stay grounded, keep your family bonded, and build 
+                your family strong so whatever comes to our future we will walk through 
+                tougher and survive.
+            </p>
+            <p class="philosophy-kr">
+                매 순간 모든 것이 변하는 미래에 무엇이 올지 아무도 알 수 없지만, 
+                여러분이 중심을 잡고 가족의 유대를 지키며 강한 가정을 세울 수 있도록 
+                제가 인도하겠습니다. 우리 미래에 어떤 일이 닥치더라도 우리는 더 단단하게 
+                함께 걸어나가며 살아남을 것입니다.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        © 2031 | SOMA SOUL SEOUL
+    </footer>
+
+    <script>
+        function togglePhilosophy() {
+            var x = document.getElementById("philosophy-content");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>            color: white;
             padding: 5px 10px;
             font-size: 0.8rem;
         }
