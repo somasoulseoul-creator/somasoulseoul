@@ -26,29 +26,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 5%;
-            position: absolute;
+            padding: 25px 5%;
+            position: fixed;
             width: 100%;
-            z-index: 100;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #F0F0F0;
         }
 
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
+        /* Logo Configuration */
         .logo-img {
-            height: 60px; /* Adjust based on your actual logo file */
+            height: 50px;
             width: auto;
         }
 
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
-            line-height: 1.1;
+            line-height: 1.2;
             text-transform: uppercase;
         }
 
@@ -57,25 +61,24 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 5px;
+            gap: 4px;
         }
 
         .status-notice {
             font-size: 0.65rem;
-            letter-spacing: 1px;
-            color: var(--gold);
+            letter-spacing: 0.5px;
+            color: #999;
             text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .status-date {
+            color: var(--gold);
             font-weight: 600;
         }
 
-        .status-notice .kr {
-            display: block;
-            font-size: 0.6rem;
-            margin-top: 2px;
-        }
-
         .apply-link {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 2px;
             text-decoration: none;
@@ -98,7 +101,7 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 10vw, 6rem);
+            font-size: clamp(2.5rem, 10vw, 5.5rem);
             margin: 0;
             font-weight: 400;
             letter-spacing: -2px;
@@ -122,207 +125,15 @@
         .cta-btn {
             background: none;
             border: 1px solid var(--charcoal);
-            padding: 15px 40px;
+            padding: 16px 45px;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
             letter-spacing: 3px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
             color: var(--charcoal);
-        }
-
-        .cta-btn:hover {
-            background: var(--charcoal);
-            color: var(--white);
-        }
-
-        /* Philosophy Content */
-        .philosophy-container {
-            padding: 120px 10%;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 2;
-        }
-
-        .text-block {
-            margin-bottom: 100px;
-        }
-
-        .text-en {
-            font-size: 1.1rem;
-            color: #222;
-            font-weight: 300;
-        }
-
-        .text-kr {
-            font-size: 1rem;
-            color: #444;
-            border-top: 1px solid #EEE;
-            padding-top: 60px;
-            word-break: keep-all;
-        }
-
-        strong {
-            font-weight: 600;
-            color: var(--charcoal);
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            color: #CCC;
-            text-transform: uppercase;
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="nav-left">
-            <img src="https://somasoulseoul-oferu559e-somasoulseoul-1339s-projects.vercel.app/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
-            <div class="logo-text">SOMA<br>SOUL<br>SEOUL</div>
-        </div>
-        <div class="nav-right">
-            <div class="status-notice">
-                Mailing list under construction. Ready May 23rd.
-                <span class="kr">뉴스레터 준비 중. 5월 23일 오픈 예정.</span>
-            </div>
-            <a href="#" class="apply-link">APPLY</a>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <h1>Soma Soul Seoul</h1>
-        <div class="hero-sub">The Architecture of Sovereign Growth</div>
-        <div class="hero-sub-kr">주권적 성장의 아키텍처</div>
-        <a href="#vision" class="cta-btn">DISCOVER OUR PHILOSOPHY</a>
-    </section>
-
-    <div id="vision" class="philosophy-container">
-        <div class="text-block text-en">
-            <p>We cannot predict every turn the future will take—because the world shifts with every passing moment. But we can <strong>choose how we stand within it.</strong></p>
-            <p>I will help you <strong>stay grounded</strong> when things feel uncertain. I will help you <strong>protect what matters most</strong>—your family, your connection, your foundation.</p>
-            <p>And together, we will build a home that is <strong>not easily shaken.</strong></p>
-            <p>Through <strong>SomaSoulSeoul</strong>, you will have guidance—not just to endure, but to move through challenges with clarity and strength. You will not walk this path alone.</p>
-            <p>Together, we will build a <strong>strong, connected community</strong>—one that supports our families and nurtures our children.</p>
-            <p>So whatever comes—whether challenge or change—you won’t face it unprepared. You will face it <strong>steady, united, and stronger</strong> than before. And no matter what the future brings, we will move forward—together—and <strong>endure.</strong></p>
-        </div>
-
-        <div class="text-block text-kr">
-            <p>우리는 미래에 어떤 일이 일어날지 모두 알 수는 없습니다. 세상은 매 순간 변하고 있기 때문입니다. 하지만 그 속에서 <strong>어떻게 서 있을지는 우리가 선택할 수 있습니다.</strong></p>
-            <p>제가 여러분이 흔들리지 않도록 <strong>중심을 잡을 수 있게</strong> 돕겠습니다. 가장 소중한 것—<strong>가족, 관계, 그리고 삶의 기반</strong>—을 지킬 수 있도록 함께하겠습니다.</p>
-            <p>그리고 <strong>쉽게 무너지지 않는 단단한 가정</strong>을 함께 만들어가겠습니다.</p>
-            <p>SomaSoulSeoul을 통해, 단순히 버티는 것이 아니라 어려움을 지나갈 수 있도록 돕는 <strong>길잡이</strong>가 되어드리겠습니다. 이 길은 혼자가 아니라, 함께 걷는 길입니다.</p>
-            <p>우리는 함께, 가족과 아이들을 위한 <strong>더 강하고 연결된 공동체</strong>를 만들어갈 것입니다.</p>
-            <p>그래서 어떤 변화와 어려움이 오더라도 <strong>준비되지 않은 상태로 맞이하지 않게</strong> 될 것입니다. 여러분은 <strong>더 단단하고, 하나로 연결된 상태</strong>로 그것을 마주하게 될 것입니다.</p>
-            <p>그리고 미래가 무엇을 가져오든, 우리는 함께 앞으로 나아가며 <strong>결국 이겨낼 것입니다.</strong></p>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2026 SOMA SOUL SEOUL | SYSTEM OPERATIONAL | PROTOCOL 2031
-    </footer>
-
-</body>
-</html>            align-items: center;
-            gap: 20px;
-        }
-
-        .logo-img {
-            height: 60px; /* Adjust based on your actual logo file */
-            width: auto;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            line-height: 1.1;
-            text-transform: uppercase;
-        }
-
-        .nav-right {
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 5px;
-        }
-
-        .status-notice {
-            font-size: 0.65rem;
-            letter-spacing: 1px;
-            color: var(--gold);
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .status-notice .kr {
-            display: block;
-            font-size: 0.6rem;
-            margin-top: 2px;
-        }
-
-        .apply-link {
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-decoration: none;
-            color: var(--charcoal);
-            border-bottom: 2px solid var(--charcoal);
-            padding-bottom: 2px;
-            margin-top: 5px;
-        }
-
-        /* Hero */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 10vw, 6rem);
-            margin: 0;
             font-weight: 400;
-            letter-spacing: -2px;
-        }
-
-        .hero-sub {
-            font-size: 0.9rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin: 20px 0 10px 0;
-            color: #333;
-        }
-
-        .hero-sub-kr {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: var(--gold);
-            margin-bottom: 50px;
-        }
-
-        .cta-btn {
-            background: none;
-            border: 1px solid var(--charcoal);
-            padding: 15px 40px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            color: var(--charcoal);
         }
 
         .cta-btn:hover {
@@ -330,16 +141,20 @@
             color: var(--white);
         }
 
-        /* Philosophy Content */
-        .philosophy-container {
+        /* Philosophy Container (Single Section) */
+        .philosophy-section {
             padding: 120px 10%;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 2;
+            background-color: #FBFBFB;
         }
 
-        .text-block {
-            margin-bottom: 100px;
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 2.2;
+        }
+
+        .lang-section {
+            margin-bottom: 80px;
         }
 
         .text-en {
@@ -359,14 +174,15 @@
         strong {
             font-weight: 600;
             color: var(--charcoal);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
         }
 
         footer {
             text-align: center;
-            padding: 60px 0;
+            padding: 80px 0;
             font-size: 0.6rem;
             letter-spacing: 2px;
-            color: #CCC;
+            color: #BBB;
             text-transform: uppercase;
         }
     </style>
@@ -375,13 +191,15 @@
 
     <nav>
         <div class="nav-left">
-            <img src="https://somasoulseoul-oferu559e-somasoulseoul-1339s-projects.vercel.app/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+            <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
             <div class="logo-text">SOMA<br>SOUL<br>SEOUL</div>
         </div>
         <div class="nav-right">
             <div class="status-notice">
-                Mailing list under construction. Ready May 23rd.
-                <span class="kr">뉴스레터 준비 중. 5월 23일 오픈 예정.</span>
+                Mailing list: <span class="status-date">Under Construction (Ready May 23rd)</span>
+            </div>
+            <div class="status-notice" style="text-transform: none;">
+                뉴스레터: <span class="status-date">준비 중 (5월 23일 오픈 예정)</span>
             </div>
             <a href="#" class="apply-link">APPLY</a>
         </div>
@@ -394,26 +212,28 @@
         <a href="#vision" class="cta-btn">DISCOVER OUR PHILOSOPHY</a>
     </section>
 
-    <div id="vision" class="philosophy-container">
-        <div class="text-block text-en">
-            <p>We cannot predict every turn the future will take—because the world shifts with every passing moment. But we can <strong>choose how we stand within it.</strong></p>
-            <p>I will help you <strong>stay grounded</strong> when things feel uncertain. I will help you <strong>protect what matters most</strong>—your family, your connection, your foundation.</p>
-            <p>And together, we will build a home that is <strong>not easily shaken.</strong></p>
-            <p>Through <strong>SomaSoulSeoul</strong>, you will have guidance—not just to endure, but to move through challenges with clarity and strength. You will not walk this path alone.</p>
-            <p>Together, we will build a <strong>strong, connected community</strong>—one that supports our families and nurtures our children.</p>
-            <p>So whatever comes—whether challenge or change—you won’t face it unprepared. You will face it <strong>steady, united, and stronger</strong> than before. And no matter what the future brings, we will move forward—together—and <strong>endure.</strong></p>
-        </div>
+    <section id="vision" class="philosophy-section">
+        <div class="philosophy-content">
+            <div class="lang-section text-en">
+                <p>We cannot predict every turn the future will take—because the world shifts with every passing moment. But we can <strong>choose how we stand within it.</strong></p>
+                <p>I will help you <strong>stay grounded</strong> when things feel uncertain. I will help you <strong>protect what matters most</strong>—your family, your connection, your foundation.</p>
+                <p>And together, we will build a home that is <strong>not easily shaken.</strong></p>
+                <p>Through <strong>SomaSoulSeoul</strong>, you will have guidance—not just to endure, but to move through challenges with clarity and strength. You will not walk this path alone.</p>
+                <p>Together, we will build a <strong>strong, connected community</strong>—one that supports our families and nurtures our children.</p>
+                <p>So whatever comes—whether challenge or change—you won’t face it unprepared. You will face it <strong>steady, united, and stronger</strong> than before. And no matter what the future brings, we will move forward—together—and <strong>endure.</strong></p>
+            </div>
 
-        <div class="text-block text-kr">
-            <p>우리는 미래에 어떤 일이 일어날지 모두 알 수는 없습니다. 세상은 매 순간 변하고 있기 때문입니다. 하지만 그 속에서 <strong>어떻게 서 있을지는 우리가 선택할 수 있습니다.</strong></p>
-            <p>제가 여러분이 흔들리지 않도록 <strong>중심을 잡을 수 있게</strong> 돕겠습니다. 가장 소중한 것—<strong>가족, 관계, 그리고 삶의 기반</strong>—을 지킬 수 있도록 함께하겠습니다.</p>
-            <p>그리고 <strong>쉽게 무너지지 않는 단단한 가정</strong>을 함께 만들어가겠습니다.</p>
-            <p>SomaSoulSeoul을 통해, 단순히 버티는 것이 아니라 어려움을 지나갈 수 있도록 돕는 <strong>길잡이</strong>가 되어드리겠습니다. 이 길은 혼자가 아니라, 함께 걷는 길입니다.</p>
-            <p>우리는 함께, 가족과 아이들을 위한 <strong>더 강하고 연결된 공동체</strong>를 만들어갈 것입니다.</p>
-            <p>그래서 어떤 변화와 어려움이 오더라도 <strong>준비되지 않은 상태로 맞이하지 않게</strong> 될 것입니다. 여러분은 <strong>더 단단하고, 하나로 연결된 상태</strong>로 그것을 마주하게 될 것입니다.</p>
-            <p>그리고 미래가 무엇을 가져오든, 우리는 함께 앞으로 나아가며 <strong>결국 이겨낼 것입니다.</strong></p>
+            <div class="lang-section text-kr">
+                <p>우리는 미래에 어떤 일이 일어날지 모두 알 수는 없습니다. 세상은 매 순간 변하고 있기 때문입니다. 하지만 그 속에서 <strong>어떻게 서 있을지는 우리가 선택할 수 있습니다.</strong></p>
+                <p>제가 여러분이 흔들리지 않도록 <strong>중심을 잡을 수 있게</strong> 돕겠습니다. 가장 소중한 것—<strong>가족, 관계, 그리고 삶의 기반</strong>—을 지킬 수 있도록 함께하겠습니다.</p>
+                <p>그리고 <strong>쉽게 무너지지 않는 단단한 가정</strong>을 함께 만들어가겠습니다.</p>
+                <p>SomaSoulSeoul을 통해, 단순히 버티는 것이 아니라 어려움을 지나갈 수 있도록 돕는 <strong>길잡이</strong>가 되어드리겠습니다. 이 길은 혼자가 아니라, 함께 걷는 길입니다.</p>
+                <p>우리는 함께, 가족과 아이들을 위한 <strong>더 강하고 연결된 공동체</strong>를 만들어갈 것입니다.</p>
+                <p>그래서 어떤 변화와 어려움이 오더라도 <strong>준비되지 않은 상태로 맞이하지 않게</strong> 될 것입니다. 여러분은 <strong>더 단단하고, 하나로 연결된 상태</strong>로 그것을 마주하게 될 것입니다.</p>
+                <p>그리고 미래가 무엇을 가져오든, 우리는 함께 앞으로 나아가며 <strong>결국 이겨낼 것입니다.</strong></p>
+            </div>
         </div>
-    </div>
+    </section>
 
     <footer>
         &copy; 2026 SOMA SOUL SEOUL | SYSTEM OPERATIONAL | PROTOCOL 2031
