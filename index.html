@@ -98,8 +98,9 @@
       animation: fadeUp 1s 0.2s forwards;
     }
 
+    /* Smaller hero logo */
     .hero-logo {
-      width: clamp(180px, 28vw, 280px);
+      width: clamp(140px, 20vw, 220px);
       height: auto;
       margin-bottom: 40px;
       opacity: 0;
@@ -164,6 +165,65 @@
     .phil-inner { max-width: 720px; margin: 0 auto; }
     .phil-body { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; line-height: 2.2; color: rgba(250,250,248,0.55); margin-top: 68px; }
     .phil-highlight { border-left: 2px solid var(--gold); padding-left: 34px; margin: 58px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: var(--white); line-height: 1.75; }
+
+    /* FINAL CTA & FOOTER */
+    .final-cta {
+      padding: 130px 6%;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .final-cta .phil-body {
+      margin-top: 0;
+      margin-bottom: 80px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4.2vw, 3rem);
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 46px auto 18px;
+      max-width: 620px;
+    }
+
+    .final-cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 0.63rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 19px 56px;
+      text-decoration: none;
+      transition: all 0.3s;
+      margin-bottom: 26px;
+    }
+    .final-cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .final-cta-note {
+      font-size: 0.58rem;
+      letter-spacing: 2px;
+      color: rgba(250,250,248,0.16);
+      text-transform: uppercase;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 44px 6%;
+      text-align: center;
+    }
+
+    .footer-meta {
+      font-size: 0.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(250,250,248,0.16);
+    }
 
     /* UTILITIES */
     .reveal { opacity: 0; transform: translateY(34px); transition: 0.95s cubic-bezier(0.16,1,0.3,1); }
@@ -266,16 +326,26 @@
     </div>
   </section>
 
-  <section class="philosophy-deep">
+  <section class="final-cta" id="apply">
     <div class="phil-inner">
-      <div class="section-label reveal">The Full Picture</div>
-      <div class="phil-body">
-        <p class="reveal">이건 단순한 "변화의 시대"가 아닙니다. AI는 이미 사고의 일부를 대신하고 있고, 우리가 배우는 방식과 살아가는 방식을 근본부터 다시 쓰고 있습니다.</p>
-        <div class="phil-highlight reveal">그래서 우리는 아이를 정답에 맞추지 않습니다. 대신, 어떤 정답 앞에서도 흔들리지 않을 기준과 힘을 키웁니다.</div>
-        <p class="reveal">지식을 앞당기는 교육보다 감각과 경험을 충분히 쌓는 환경이 더 오래, 더 단단하게 아이를 만듭니다.</p>
+      <div class="phil-body reveal">
+        <p>SomaSoul Seoul은 그 힘을 키웁니다.<br>
+        아이의 속도를 존중하고, 몸과 감각을 통해 배우게 하며,<br>
+        <strong>어떤 시대에도 스스로 설 수 있도록.</strong></p>
       </div>
     </div>
+
+    <div class="section-label reveal">다음 단계</div>
+    <h2 class="reveal">어려운 길을 선택한<br>부모를 위한 곳입니다</h2>
+    <p class="manifesto-sub reveal" style="margin-bottom: 52px;">뉴스레터 &nbsp;·&nbsp; 2026년 5월 23일 오픈</p>
+    
+    <a href="#" class="final-cta-btn reveal">Apply to Join</a>
+    <div class="final-cta-note reveal">@somasoulseoul &nbsp;·&nbsp; Sovereign Growth 2031</div>
   </section>
+
+  <footer>
+    <div class="footer-meta">© 2026 &nbsp;·&nbsp; System Operational &nbsp;·&nbsp; Protocol 2031</div>
+  </footer>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
