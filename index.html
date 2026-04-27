@@ -10,6 +10,7 @@
             --gold: #C5A059;
             --charcoal: #1A1A1A;
             --white: #FFFFFF;
+            --soft-grey: #F9F9F9;
         }
 
         * { box-sizing: border-box; }
@@ -32,21 +33,20 @@
             top: 0;
             background: rgba(255, 255, 255, 0.98);
             z-index: 1000;
+            border-bottom: 1px solid #F2F2F2;
         }
 
-        /* 1. LOGO FIX: Image Only */
         .nav-left {
             display: flex;
             align-items: center;
         }
 
         .logo-img {
-            height: 70px; /* Increased size for visibility */
+            height: 70px;
             width: auto;
             display: block;
         }
 
-        /* 2. NEWSLETTER / APPLY FIX: Top Right */
         .nav-right {
             text-align: right;
             display: flex;
@@ -73,9 +73,12 @@
             border-bottom: 2px solid var(--charcoal);
             padding-bottom: 2px;
             margin-top: 10px;
+            transition: 0.3s;
         }
 
-        /* Hero */
+        .apply-link:hover { color: var(--gold); border-color: var(--gold); }
+
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -127,34 +130,62 @@
             color: var(--white);
         }
 
-        /* Philosophy Container */
+        /* Philosophy Section */
         .philosophy-section {
-            padding: 140px 10% 100px 10%;
-            background-color: #FAFAFA;
+            padding: 160px 10% 120px 10%;
+            background-color: var(--soft-grey);
+        }
+
+        .philosophy-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .philosophy-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .philosophy-header .line {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto;
         }
 
         .philosophy-content {
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
             line-height: 2.2;
-        }
-
-        .lang-section {
-            margin-bottom: 80px;
-        }
-
-        .text-en {
-            font-size: 1.15rem;
-            color: #222;
-            font-weight: 300;
-        }
-
-        .text-kr {
-            font-size: 1rem;
-            color: #444;
-            border-top: 1px solid #EEE;
-            padding-top: 60px;
+            font-size: 1.1rem;
+            color: #333;
             word-break: keep-all;
+        }
+
+        .philosophy-content p {
+            margin-bottom: 35px;
+        }
+
+        .highlight-box {
+            border-left: 3px solid var(--gold);
+            padding-left: 30px;
+            margin: 60px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .pillars {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 80px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 3px;
         }
 
         strong {
@@ -165,7 +196,7 @@
         footer {
             text-align: center;
             padding: 80px 0;
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             letter-spacing: 2px;
             color: #BBB;
             text-transform: uppercase;
@@ -191,28 +222,49 @@
         <h1>Soma Soul Seoul</h1>
         <div class="hero-sub">The Architecture of Sovereign Growth</div>
         <div class="hero-sub-kr">주권적 성장의 아키텍처</div>
-        <a href="#vision" class="cta-btn">DISCOVER OUR PHILOSOPHY</a>
+        <a href="#philosophy" class="cta-btn">DISCOVER OUR PHILOSOPHY</a>
     </section>
 
-    <section id="vision" class="philosophy-section">
+    <section id="philosophy" class="philosophy-section">
+        <div class="philosophy-header">
+            <h2>The Philosophy of Soma Soul Seoul</h2>
+            <div class="line"></div>
+        </div>
+
         <div class="philosophy-content">
-            <div class="lang-section text-en">
-                <p>We cannot predict every turn the future will take—because the world shifts with every passing moment. But we can <strong>choose how we stand within it.</strong></p>
-                <p>I will help you <strong>stay grounded</strong> when things feel uncertain. I will help you <strong>protect what matters most</strong>—your family, your connection, your foundation.</p>
-                <p>And together, we will build a home that is <strong>not easily shaken.</strong></p>
-                <p>Through <strong>SomaSoulSeoul</strong>, you will have guidance—not just to endure, but to move through challenges with clarity and strength. You will not walk this path alone.</p>
-                <p>Together, we will build a <strong>strong, connected community</strong>—one that supports our families and nurtures our children.</p>
-                <p>So whatever comes—whether challenge or change—you won’t face it unprepared. You will face it <strong>steady, united, and stronger</strong> than before. And no matter what the future brings, we will move forward—together—and <strong>endure.</strong></p>
+            <p>이건 단순한 <strong>“변화의 시대”</strong>가 아닙니다.<br>
+            AI는 이미 사고의 일부를 대신하고 있고, 우리가 배우는 방식, 결정하는 방식, 살아가는 방식까지 근본부터 다시 쓰고 있습니다.</p>
+
+            <p>문제는 하나입니다. <strong>이 속도와 방향을 아무도 예측할 수 없다는 것.</strong></p>
+
+            <p>그래서 우리는 아이를 정답에 맞추지 않습니다.<br>
+            대신, 어떤 정답 앞에서도 흔들리지 않을 <strong>기준과 힘</strong>을 키웁니다.</p>
+
+            <div class="highlight-box">
+                SomaSoul Seoul은 한 가지 원칙 위에 서 있습니다.<br>
+                아이의 성장은 빠르게 만드는 것이 아니라, <strong>순서대로 쌓는 것</strong>입니다.
             </div>
 
-            <div class="lang-section text-kr">
-                <p>우리는 미래에 어떤 일이 일어날지 모두 알 수는 없습니다. 세상은 매 순간 변하고 있기 때문입니다. 하지만 그 속에서 <strong>어떻게 서 있을지는 우리가 선택할 수 있습니다.</strong></p>
-                <p>제가 여러분이 흔들리지 않도록 <strong>중심을 잡을 수 있게</strong> 돕겠습니다. 가장 소중한 것—<strong>가족, 관계, 그리고 삶의 기반</strong>—을 지킬 수 있도록 함께하겠습니다.</p>
-                <p>그리고 <strong>쉽게 무너지지 않는 단단한 가정</strong>을 함께 만들어가겠습니다.</p>
-                <p>SomaSoulSeoul을 통해, 단순히 버티는 것이 아니라 어려움을 지나갈 수 있도록 돕는 <strong>길잡이</strong>가 되어드리겠습니다. 이 길은 혼자가 아니라, 함께 걷는 길입니다.</p>
-                <p>우리는 함께, 가족과 아이들을 위한 <strong>더 강하고 연결된 공동체</strong>를 만들어갈 것입니다.</p>
-                <p>그래서 어떤 변화와 어려움이 오더라도 <strong>준비되지 않은 상태로 맞이하지 않게</strong> 될 것입니다. 여러분은 <strong>더 단단하고, 하나로 연결된 상태</strong>로 그것을 마주하게 될 것입니다.</p>
-                <p>그리고 미래가 무엇을 가져오든, 우리는 함께 앞으로 나아가며 <strong>결국 이겨낼 것입니다.</strong></p>
+            <p>깊이 생각하는 아이는 먼저 깊이 느껴본 아이입니다.<br>
+            스스로 선택하는 아이는 먼저 스스로 움직여본 아이입니다.</p>
+
+            <p>몸은 단순한 도구가 아닙니다. <strong>몸은 뇌가 세상을 이해하는 첫 번째 언어입니다.</strong></p>
+
+            <p>우리는 이미 답을 알고 있습니다. 단지 너무 빨리 가느라 잊고 있었을 뿐입니다.<br>
+            지식을 앞당기는 교육보다 <strong>감각과 경험을 충분히 쌓는 환경</strong>이 더 오래, 더 단단하게 아이를 만듭니다.</p>
+
+            <p>아이의 성장은 단계가 있습니다. 그리고 그 단계는 건너뛰는 것이 아니라 <strong>머물러야 완성됩니다.</strong></p>
+
+            <p>처음에는 몸으로 세상을 신뢰하고, 그 다음에는 감정과 상상으로 세상을 확장하며, 그 위에서 사고는 자연스럽게 자라납니다. <strong>순서를 바꾸면, 겉은 빨라 보이지만 내면은 비어 있게 됩니다.</strong></p>
+
+            <p>앞으로 가장 희소한 능력은 지식도, 기술도 아닙니다.<br>
+            AI가 답을 넘겨주는 세상에서 그 답을 <strong>의심하고, 선택하고, 스스로 판단하는 힘.</strong> 그것이 결국 아이를 지키는 힘이 됩니다.</p>
+
+            <p>SomaSoul Seoul은 그 힘을 키웁니다.<br>
+            아이의 속도를 존중하고, 몸과 감각을 통해 배우게 하며, 어떤 시대에도 스스로 설 수 있도록.</p>
+
+            <div class="pillars">
+                자주성 &bull; 감각 &bull; 전략
             </div>
         </div>
     </section>
