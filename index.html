@@ -1,40 +1,299 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soma Soul Seoul | Protocol 2031</title>
-    <style>
-        :root { --orange: #FF4D00; --bg: #F2F2F2; --black: #111; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-        body { background: var(--bg); color: var(--black); overflow-x: hidden; }
-
-        /* THE GATEKEEPER */
-        #gatekeeper {
-            position: fixed; inset: 0; background: var(--black); color: white;
-            z-index: 1000; display: flex; flex-direction: column; justify-content: space-between;
-            padding: 40px; transition: transform 0.8s cubic-bezier(0.82, 0, 0.18, 1);
-        }
-        .gate-header { font-family: monospace; font-size: 10px; opacity: 0.5; display: flex; justify-content: space-between; }
-        .gate-title { font-size: 10vw; font-weight: 900; line-height: 0.8; text-transform: uppercase; font-style: italic; margin-top: 40px; }
-        .gate-btn { background: white; color: black; padding: 20px 40px; border-radius: 100px; font-weight: 900; border: none; cursor: pointer; align-self: flex-end; text-transform: uppercase; }
-        .gate-btn:hover { background: var(--orange); color: white; }
-
-        /* CONTENT SECTIONS */
-        nav { position: sticky; top: 0; background: var(--bg); border-bottom: 2px solid var(--black); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
-        .hero { display: grid; grid-template-columns: 1fr; border-bottom: 2px solid var(--black); }
-        @media (min-width: 768px) { .hero { grid-template-columns: 7fr 5fr; } }
-        
-        .hero-left { padding: 60px; border-right: 2px solid var(--black); min-height: 65vh; display: flex; flex-direction: column; justify-content: space-between; }
-        .hero-right { display: flex; flex-direction: column; }
-        
-        .box { padding: 40px; border-bottom: 2px solid var(--black); flex: 1; display: flex; flex-direction: column; justify-content: center; }
-        .box:last-child { border-bottom: 0; background: var(--black); color: white; }
-        
-        .huge-text { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; line-height: 0.75; text-transform: uppercase; font-style: italic; }
-        
-        /* THE MARQUEE */
-        .marquee { background: var(--orange); padding: 20px 0; border-bottom: 2px solid var(--black); overflow: hidden; white-space: nowrap; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Soma Soul Seoul | Sovereign Humanity v2026.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#ffffff;
+  color:#0D1527;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+:root{
+  --gold:#C49535;
+  --navy:#0D1527;
+  --mid:#4A5568;
+  --light:#8A93A2;
+  --pale:#F7F8FA;
+  --border:#E8ECF0;
+}
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem clamp(1.5rem,5vw,5rem);
+}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo img{height:36px;display:block}
+.nav-logo-text{font-size:.95rem;font-weight:800;letter-spacing:.06em;color:var(--navy);text-transform:uppercase}
+.nav-logo-text span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.7rem;font-weight:600;letter-spacing:.12em;color:var(--mid);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-pill{background:var(--navy);color:#fff !important;padding:.55rem 1.5rem;border-radius:100px;transition:background .2s !important}
+.nav-pill:hover{background:var(--gold) !important}
+.hero{
+  min-height:92vh;
+  padding:clamp(4rem,8vw,8rem) clamp(1.5rem,5vw,5rem) clamp(3rem,6vw,6rem);
+  display:flex;flex-direction:column;justify-content:center;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.hero-tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:2.5rem}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h{font-size:clamp(3.5rem,9vw,9rem);font-weight:800;line-height:.95;letter-spacing:-.03em;color:var(--navy);max-width:14ch;margin-bottom:2.5rem}
+.hero-h .gold{color:var(--gold)}
+.hero-sub{font-size:clamp(1rem,1.8vw,1.25rem);font-weight:400;line-height:1.7;color:var(--mid);max-width:42rem;margin-bottom:1rem}
+.hero-sub strong{color:var(--navy);font-weight:700}
+.hero-ko{font-family:'Noto Serif KR',serif;font-size:clamp(.9rem,1.4vw,1.05rem);font-weight:300;font-style:italic;color:var(--light);margin-bottom:3.5rem;line-height:1.8}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--navy);color:#fff;padding:1rem 2.2rem;border-radius:100px;font-size:.85rem;font-weight:700;letter-spacing:.04em;text-decoration:none;transition:background .25s,transform .2s;display:inline-block}
+.btn-primary:hover{background:var(--gold);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--navy);padding:1rem 2.2rem;border-radius:100px;font-size:.85rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border:1.5px solid var(--border);transition:border-color .25s,transform .2s;display:inline-block}
+.btn-secondary:hover{border-color:var(--navy);transform:translateY(-1px)}
+.hero-scroll{position:absolute;bottom:2.5rem;right:clamp(1.5rem,5vw,5rem);display:flex;align-items:center;gap:.8rem;font-size:.65rem;font-weight:600;letter-spacing:.2em;color:var(--light);text-transform:uppercase}
+.scroll-line{width:2.5rem;height:1px;background:var(--light)}
+#manifesto{background:#fff;border-bottom:1px solid var(--border)}
+.section-kicker{font-size:.7rem;font-weight:700;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:1.2rem}
+.mf-top{padding:clamp(4rem,7vw,7rem) clamp(1.5rem,5vw,5rem);border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end}
+.mf-h{font-size:clamp(2.2rem,5vw,4.5rem);font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--navy);margin-top:.8rem}
+.mf-h em{font-style:italic;color:var(--gold);font-weight:300;display:block;font-size:.7em;margin-top:.4em;letter-spacing:-.01em}
+.mf-body{font-size:1.05rem;font-weight:400;line-height:1.85;color:var(--mid);padding-top:2rem}
+.mf-body strong{color:var(--navy);font-weight:700}
+.mf-cards{display:grid;grid-template-columns:1fr 1fr}
+.fc{padding:clamp(3rem,5vw,5rem) clamp(1.5rem,5vw,5rem);border-right:1px solid var(--border)}
+.fc:last-child{border-right:none;background:var(--pale)}
+.fc-label{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem;display:block}
+.fc-label.no{color:var(--light)}
+.fc-label.yes{color:var(--gold)}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:1.1rem}
+.fc li{font-size:1rem;font-weight:400;line-height:1.7;color:var(--mid);padding-left:1.5rem;position:relative}
+.fc li::before{content:'—';position:absolute;left:0;color:var(--border);font-weight:300}
+.fc.yes li{color:var(--navy);font-weight:600}
+.fc.yes li::before{color:var(--gold)}
+#glass{background:var(--navy);color:#fff;padding:clamp(5rem,9vw,10rem) clamp(1.5rem,5vw,5rem);border-bottom:3px solid var(--gold)}
+.gl-kicker{font-size:.7rem;font-weight:700;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:2rem}
+.gl-h{font-size:clamp(2.5rem,7vw,7rem);font-weight:800;line-height:.95;letter-spacing:-.03em;color:#fff;max-width:16ch;margin-bottom:3rem}
+.gl-h em{font-style:italic;color:var(--gold);font-weight:300}
+.gl-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.gl-body{font-size:1.05rem;font-weight:400;line-height:1.9;color:rgba(255,255,255,.55);margin-bottom:2.5rem}
+.gl-quote{border-left:3px solid var(--gold);padding:2rem 2.5rem}
+.gl-quote p{font-family:'Noto Serif KR',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:700;line-height:1.5;color:#fff}
+.gl-quote p span{color:var(--gold)}
+#beliefs{background:var(--pale);border-bottom:1px solid var(--border)}
+.bl-top{padding:clamp(4rem,7vw,7rem) clamp(1.5rem,5vw,5rem) clamp(2.5rem,4vw,4rem);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-end;gap:3rem;flex-wrap:wrap}
+.bl-h{font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-.03em;color:var(--navy);line-height:1;margin-top:.5rem}
+.bl-note{font-size:.95rem;font-weight:400;color:var(--light);line-height:1.7;max-width:22rem}
+.b-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.bc{padding:clamp(3rem,5vw,5rem) clamp(1.5rem,4vw,4rem);border-right:1px solid var(--border);background:#fff;transition:background .3s;position:relative;overflow:hidden}
+.bc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);opacity:0;transition:opacity .3s}
+.bc:hover{background:#FFFDF7}
+.bc:hover::after{opacity:1}
+.bc:last-child{border-right:none}
+.bc-num{font-size:4rem;font-weight:800;color:rgba(196,149,53,.1);letter-spacing:-.05em;line-height:1;margin-bottom:1.5rem}
+.bc-title{font-family:'Noto Serif KR',serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.3}
+.bc-desc{font-size:.9rem;font-weight:400;line-height:1.9;color:var(--mid)}
+#picture{background:#fff;padding:clamp(5rem,9vw,10rem) clamp(1.5rem,5vw,5rem);border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(4rem,8vw,9rem);align-items:start}
+.pic-h{font-size:clamp(2rem,3.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;color:var(--navy);line-height:1.05;margin-top:.8rem}
+.pic-h em{font-style:italic;color:var(--gold);font-weight:300}
+.pic-r p{font-size:1rem;font-weight:400;line-height:1.95;color:var(--mid);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.pic-r p:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.pic-r p strong{color:var(--navy);font-weight:700}
+.pic-r p em{font-style:italic;color:var(--gold)}
+.mq{overflow:hidden;display:flex;padding:.9rem 0;background:var(--pale);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.mq-track{display:flex;gap:2.5rem;animation:mq 40s linear infinite;white-space:nowrap}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-item{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--light);display:flex;align-items:center;gap:1.5rem}
+.mq-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.5}
+#newsletter{background:var(--navy);color:#fff}
+.nl-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:440px}
+.nl-l{padding:clamp(4rem,7vw,7rem) clamp(1.5rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.08)}
+.nl-kicker{font-size:.7rem;font-weight:700;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem}
+.nl-h{font-size:clamp(2rem,4.5vw,4.5rem);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:.95;margin-bottom:1.5rem}
+.nl-h span{color:var(--gold)}
+.nl-sub{font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.4);line-height:1.7}
+.nl-r{padding:clamp(4rem,7vw,7rem) clamp(1.5rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center}
+.nl-r .e-label{font-size:.68rem;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:1.5rem}
+.e-row{display:flex;align-items:stretch;border:1.5px solid rgba(255,255,255,.15);border-radius:100px;overflow:hidden;margin-bottom:1.2rem;transition:border-color .25s}
+.e-row:focus-within{border-color:var(--gold)}
+.e-row input{flex:1;background:transparent;border:none;outline:none;padding:1rem 1.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:400;color:#fff;caret-color:var(--gold)}
+.e-row input::placeholder{color:rgba(255,255,255,.2)}
+.e-btn{background:var(--gold);color:#fff;border:none;padding:0 1.8rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:background .2s;white-space:nowrap}
+.e-btn:hover{background:#A07A28}
+.e-hint{font-size:.78rem;color:rgba(255,255,255,.25);line-height:1.6}
+.nl-foot{padding:1.4rem clamp(1.5rem,5vw,5rem);border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.nl-foot span{font-size:.6rem;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+  .mf-top{grid-template-columns:1fr;gap:2rem}
+  .mf-cards{grid-template-columns:1fr}
+  .fc{border-right:none;border-bottom:1px solid var(--border)}
+  .gl-grid{grid-template-columns:1fr}
+  .b-grid{grid-template-columns:1fr}
+  .bc{border-right:none;border-bottom:1px solid var(--border)}
+  #picture{grid-template-columns:1fr}
+  .nl-wrap{grid-template-columns:1fr}
+  .bl-top{flex-direction:column;align-items:flex-start}
+  nav{padding:1rem 1.5rem}
+  .nav-links{gap:1.2rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="Soma Soul Seoul"/>
+    <span class="nav-logo-text">Soma Soul<span>Seoul</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#beliefs">Beliefs</a></li>
+    <li><a href="#picture">Philosophy</a></li>
+    <li><a href="#newsletter"><span class="nav-pill">May 23</span></a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-tag"><span class="hero-tag-dot"></span>Sovereign Humanity · v2026.1</div>
+  <h1 class="hero-h">The Architecture<br>of <span class="gold">Sovereign</span><br>Growth.</h1>
+  <p class="hero-sub">아이가 이 세상에서 <strong>진짜 의미 있는 사람</strong>이 되는<br>방법을 같이 배우는 곳</p>
+  <p class="hero-ko">가장 고귀한 것을 지키는 힘, 새로운 시대를 선도하는 정신.</p>
+  <div class="hero-btns">
+    <a href="#manifesto" class="btn-primary">Read the Manifesto</a>
+    <a href="#newsletter" class="btn-secondary">Join May 23rd</a>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+</section>
+<section id="manifesto">
+  <div class="mf-top rv">
+    <div>
+      <div class="section-kicker">Manifesto</div>
+      <h2 class="mf-h">모두를 위한<br>곳이 아닙니다.<em>그래도 괜찮습니다.</em></h2>
+    </div>
+    <p class="mf-body">우리는 편한 육아를 다루지 않습니다.<br><strong>아이가 진짜 필요한 사람이 되는 구조</strong>를 다룹니다.</p>
+  </div>
+  <div class="mf-cards">
+    <div class="fc rv" style="transition-delay:.1s">
+      <span class="fc-label no">여기는 맞지 않습니다</span>
+      <ul>
+        <li>"경쟁은 나쁘다"고 가르치고 싶다면</li>
+        <li>내 아이가 특별해 보이기만 하면 된다면</li>
+        <li>아이에게 최고만 주는 것이 사랑이라면</li>
+      </ul>
+    </div>
+    <div class="fc yes rv" style="transition-delay:.2s">
+      <span class="fc-label yes">여기 있어도 됩니다</span>
+      <ul>
+        <li>아이가 넘어지는 걸 기다릴 수 있는 부모</li>
+        <li>노력의 기쁨과 사람의 가치를 아는 부모</li>
+        <li>세상에 나갔을 때 진짜 필요한 사람이 되길 원하는 부모</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="glass">
+  <div class="gl-kicker rv">The Glass Child</div>
+  <div class="gl-grid">
+    <h2 class="gl-h rv" style="transition-delay:.08s">아이를<br>왕으로<br>느끼게<br>하는 건<br><em>쉽습니다.</em></h2>
+    <div class="rv" style="transition-delay:.16s">
+      <p class="gl-body">최고로 비싼 장난감, 최고급 여행지, 이름 있는 브랜드의 옷. 다 줄 수 있어요. 그게 사랑처럼 느껴지니까요.</p>
+      <div class="gl-quote">
+        <p>하지만 그렇게 자란 아이는<br><span>유리와 같습니다.</span><br>깨지면 다시 붙지 않아요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="beliefs">
+  <div class="bl-top rv">
+    <div>
+      <div class="section-kicker">What We Believe</div>
+      <h2 class="bl-h">세 가지 원칙</h2>
+    </div>
+    <p class="bl-note">SomaSoul Seoul이 모든 것을 설계하는 기반입니다.</p>
+  </div>
+  <div class="b-grid">
+    <div class="bc rv" style="transition-delay:.06s">
+      <div class="bc-num">01</div>
+      <h3 class="bc-title">몸이 먼저입니다</h3>
+      <p class="bc-desc">깊이 생각하는 아이는 먼저 깊이 느껴본 아이입니다. 몸은 뇌가 세상을 이해하는 첫 번째 언어입니다.</p>
+    </div>
+    <div class="bc rv" style="transition-delay:.14s">
+      <div class="bc-num">02</div>
+      <h3 class="bc-title">순서가 있습니다</h3>
+      <p class="bc-desc">성장은 빠르게 만드는 것이 아니라 순서대로 쌓는 것입니다. 순서를 건너뛰면 내면이 비어 있게 됩니다.</p>
+    </div>
+    <div class="bc rv" style="transition-delay:.22s">
+      <div class="bc-num">03</div>
+      <h3 class="bc-title">판단하는 힘이 전부입니다</h3>
+      <p class="bc-desc">AI가 답을 주는 세상에서 가장 희소한 능력은 스스로 판단하는 힘입니다. 그것이 아이를 지킵니다.</p>
+    </div>
+  </div>
+</section>
+<section id="picture">
+  <div class="rv">
+    <div class="section-kicker">Our Philosophy</div>
+    <h2 class="pic-h">어려운 길을<br>선택한<br>부모를 위한<br><em>곳입니다</em></h2>
+  </div>
+  <div class="pic-r rv" style="transition-delay:.12s">
+    <p>SomaSoul Seoul은 <strong>그 힘을 키웁니다.</strong> 아이의 속도를 존중하고, 몸과 감각을 통해 배우게 하며, 어떤 시대에도 스스로 설 수 있도록.</p>
+    <p>우리는 아이를 정답에 맞추지 않습니다. 대신, <em>어떤 정답 앞에서도 흔들리지 않을 기준과 힘</em>을 키웁니다.</p>
+    <p>지식을 앞당기는 교육보다 <strong>감각과 경험을 충분히 쌓는 환경</strong>이 더 오래, 더 단단하게 아이를 만듭니다.</p>
+  </div>
+</section>
+<div class="mq">
+  <div class="mq-track">
+    <span class="mq-item">Protocol 2031<span class="mq-dot"></span></span>
+    <span class="mq-item">Sovereign Growth<span class="mq-dot"></span></span>
+    <span class="mq-item">Soma Soul Seoul<span class="mq-dot"></span></span>
+    <span class="mq-item">Newsletter · May 23<span class="mq-dot"></span></span>
+    <span class="mq-item">@somasoulseoul<span class="mq-dot"></span></span>
+    <span class="mq-item">Protocol 2031<span class="mq-dot"></span></span>
+    <span class="mq-item">Sovereign Growth<span class="mq-dot"></span></span>
+    <span class="mq-item">Soma Soul Seoul<span class="mq-dot"></span></span>
+    <span class="mq-item">Newsletter · May 23<span class="mq-dot"></span></span>
+    <span class="mq-item">@somasoulseoul<span class="mq-dot"></span></span>
+  </div>
+</div>
+<section id="newsletter">
+  <div class="nl-wrap">
+    <div class="nl-l rv">
+      <div class="nl-kicker">다음 단계</div>
+      <h2 class="nl-h">뉴스레터<br><span>5월 23일</span><br>오픈</h2>
+      <p class="nl-sub">어려운 길을 선택한 부모를 위한<br>글들이 도착합니다.</p>
+    </div>
+    <div class="nl-r rv" style="transition-delay:.12s">
+      <div class="e-label">Mailing List — Ready May 23rd</div>
+      <div class="e-row">
+        <input type="email" placeholder="이메일 주소를 입력하세요"/>
+        <button class="e-btn">Join Now</button>
+      </div>
+      <p class="e-hint">Protocol 2031 뉴스레터. 5월 23일 오픈.</p>
+    </div>
+  </div>
+  <div class="nl-foot">
+    <span>@somasoulseoul · Sovereign Humanity · v2026.1</span>
+    <span>© 2026 · Protocol 2031 · Seoul</span>
+  </div>
+</section>
+<script>
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}
+  }),{threshold:.08});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>        .marquee { background: var(--orange); padding: 20px 0; border-bottom: 2px solid var(--black); overflow: hidden; white-space: nowrap; }
         .marquee span { font-size: 30px; font-weight: 900; text-transform: uppercase; display: inline-block; animation: scroll 30s linear infinite; padding-right: 50px; }
         
         @keyframes scroll { 
