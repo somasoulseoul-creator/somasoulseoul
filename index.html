@@ -1,182 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Soma Soul Seoul | Sovereign Humanity</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,700&family=Cinzel:wght@400;600&family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:#0E0C09;
-  color:#F0EAE0;
-  font-family:'Noto Serif KR','Cormorant Garamond',serif;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-:root{
-  --g:   #C49E50;
-  --gd:  #8B6A28;
-  --ink: #0E0C09;
-  --ppr: #F8F3EB;
-  --dim: rgba(240,234,224,.55);
-  --br:  rgba(196,158,80,.2);
-}
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:1.4rem clamp(1.5rem,4vw,4rem);
-}
-nav::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(14,12,9,.9),transparent);
-  pointer-events:none;
-}
-.nav-logo img{height:40px;display:block;position:relative;z-index:1}
-.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;position:relative;z-index:1}
-.nav-links a{
-  font-family:'Cinzel',serif;font-size:.55rem;
-  letter-spacing:.28em;color:rgba(240,234,224,.6);
-  text-decoration:none;text-transform:uppercase;transition:color .25s;
-}
-.nav-links a:hover{color:var(--g)}
-.nav-pill{
-  border:1px solid rgba(196,158,80,.5);color:var(--g) !important;
-  padding:.45rem 1.4rem;transition:background .25s,color .25s,border-color .25s !important;
-}
-.nav-pill:hover{background:var(--g) !important;color:#000 !important;border-color:var(--g) !important}
-.hero{
-  height:100vh;min-height:680px;
-  background:#0E0C09;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center;
-  position:relative;overflow:hidden;
-  padding:0 2rem;
-}
-.hero-glow{
-  position:absolute;
-  width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(196,158,80,.12) 0%,transparent 65%);
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  pointer-events:none;
-}
-.hero-logo{
-  width:clamp(120px,16vw,180px);
-  margin-bottom:3rem;
-  position:relative;z-index:1;
-  animation:fadeup 1.2s ease both;
-}
-.hero-eyebrow{
-  font-family:'Cinzel',serif;font-size:.58rem;
-  letter-spacing:.5em;color:var(--g);
-  text-transform:uppercase;
-  margin-bottom:2rem;
-  position:relative;z-index:1;
-  animation:fadeup .9s .2s ease both;
-  display:flex;align-items:center;gap:1.2rem;justify-content:center;
-}
-.hero-eyebrow::before,.hero-eyebrow::after{
-  content:'';display:block;
-  width:3rem;height:1px;
-  background:linear-gradient(90deg,transparent,var(--g));
-  opacity:.6;
-}
-.hero-eyebrow::after{background:linear-gradient(90deg,var(--g),transparent)}
-.hero-title{
-  font-family:'Cormorant Garamond',serif;
-  position:relative;z-index:1;
-  animation:fadeup .9s .35s ease both;
-  margin-bottom:2rem;
-}
-.hero-title .the{
-  display:block;font-size:clamp(1rem,2vw,1.5rem);font-weight:300;
-  letter-spacing:.4em;color:rgba(240,234,224,.4);text-transform:uppercase;margin-bottom:.5rem;
-}
-.hero-title .arch{
-  display:block;font-size:clamp(3.5rem,8vw,8rem);font-weight:700;
-  line-height:.82;letter-spacing:-.04em;color:#F0EAE0;text-transform:uppercase;
-}
-.hero-title .rest{
-  display:block;font-size:clamp(1.2rem,2.5vw,2.2rem);font-weight:300;
-  font-style:italic;color:var(--g);letter-spacing:.05em;margin-top:.8rem;
-}
-.hero-sub{
-  font-size:clamp(.95rem,1.6vw,1.15rem);font-weight:300;
-  color:rgba(240,234,224,.5);line-height:1.8;max-width:26rem;
-  margin:0 auto 3.5rem;position:relative;z-index:1;
-  animation:fadeup .9s .5s ease both;
-}
-.hero-sub strong{color:#F0EAE0;font-weight:700;display:block;font-size:1.05em}
-.hero-cta{
-  display:inline-flex;align-items:center;gap:1rem;
-  border:1px solid rgba(196,158,80,.5);
-  color:var(--g);padding:1rem 2.8rem;
-  font-family:'Cinzel',serif;font-size:.62rem;
-  letter-spacing:.3em;text-transform:uppercase;text-decoration:none;
-  transition:background .3s,color .3s,border-color .3s;
-  position:relative;z-index:1;animation:fadeup .9s .65s ease both;
-}
-.hero-cta:hover{background:var(--g);color:#000;border-color:var(--g)}
-.hero-scroll{
-  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.6rem;
-  font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.35em;
-  color:rgba(196,158,80,.35);text-transform:uppercase;
-}
-.hero-scroll-line{
-  width:1px;height:3rem;
-  background:linear-gradient(to bottom,var(--g),transparent);
-  opacity:.3;animation:scrollline 2s ease-in-out infinite;
-}
-@keyframes scrollline{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:.7;transform:scaleY(.6)}}
-#manifesto{background:var(--ppr);color:var(--ink);border-top:2px solid var(--g);}
-.mf-header{
-  padding:clamp(5rem,8vw,9rem) clamp(2rem,6vw,6rem) clamp(3rem,5vw,5rem);
-  border-bottom:1px solid rgba(168,132,58,.2);
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;
-}
-.mf-label{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.42em;color:var(--gd);text-transform:uppercase;margin-bottom:1.5rem;}
-.mf-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:700;line-height:.95;color:#0E0C09;letter-spacing:-.025em;}
-.mf-h em{font-style:italic;font-weight:300;color:var(--gd);display:block;font-size:.75em;margin-top:.3em}
-.mf-body{font-size:1.05rem;font-weight:300;line-height:1.95;color:rgba(14,12,9,.6);padding-top:1rem;}
-.mf-body strong{color:#0E0C09;font-weight:700}
-.mf-grid{display:grid;grid-template-columns:1fr 1fr}
-.fc{padding:clamp(3rem,5vw,5rem) clamp(2rem,4vw,4rem);border-right:1px solid rgba(168,132,58,.15);border-top:1px solid rgba(168,132,58,.15);}
-.fc:last-child{border-right:none;background:#F0E8D8}
-.fc-label{font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.35em;text-transform:uppercase;margin-bottom:2rem;display:block;}
-.fc-label.no{color:#6B5225}
-.fc-label.yes{color:var(--gd)}
-.fc ul{list-style:none;display:flex;flex-direction:column;gap:1.1rem}
-.fc li{font-size:1.05rem;font-weight:400;line-height:1.75;color:rgba(14,12,9,.85);padding-left:1.5rem;position:relative;}
-.fc li::before{content:'—';position:absolute;left:0;color:rgba(168,132,58,.4);}
-.fc.yes li{color:#0E0C09;font-weight:700}
-.fc.yes li::before{color:var(--gd)}
-#glass{background:#0E0C09;padding:clamp(6rem,10vw,12rem) clamp(2rem,6vw,6rem);text-align:center;border-top:1px solid rgba(196,158,80,.15);}
-.gl-label{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.45em;color:var(--g);text-transform:uppercase;margin-bottom:3rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;}
-.gl-label::before,.gl-label::after{content:'';display:block;width:3rem;height:1px;background:var(--g);opacity:.35}
-.gl-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,4.5rem);font-weight:700;line-height:.92;color:#F0EAE0;letter-spacing:-.03em;margin-bottom:1rem;}
-.gl-h em{font-style:italic;color:var(--g);font-weight:300}
-.gl-rule{width:3rem;height:1px;background:var(--g);margin:3rem auto;opacity:.4}
-.gl-body{max-width:34rem;margin:0 auto;font-size:1rem;font-weight:300;line-height:2;color:rgba(240,234,224,.55);margin-bottom:4rem;}
-.gl-quote{max-width:42rem;margin:0 auto;border:1px solid rgba(196,158,80,.25);padding:3.5rem;position:relative;}
-.gl-quote::before{content:'"';position:absolute;top:-1.5rem;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;line-height:1;color:var(--g);opacity:.4;background:#0E0C09;padding:0 1rem;}
-.gl-quote p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2.2rem);font-style:italic;font-weight:300;color:#F0EAE0;line-height:1.4;}
-.gl-quote p strong{font-weight:700;color:var(--g);font-style:normal}
-#beliefs{background:var(--ppr);color:var(--ink);border-top:2px solid var(--g);}
-.bl-header{padding:clamp(5rem,7vw,7rem) clamp(2rem,6vw,6rem) clamp(3rem,4vw,4rem);border-bottom:1px solid rgba(168,132,58,.2);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem;}
-.bl-label{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.42em;color:var(--gd);text-transform:uppercase;margin-bottom:1.2rem;}
-.bl-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.8rem);font-weight:700;font-style:italic;color:#0E0C09;line-height:1;}
-.bl-note{font-size:.9rem;font-weight:300;color:rgba(14,12,9,.55);line-height:1.8;max-width:20rem;}
-.b-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.bc{padding:clamp(3.5rem,5vw,5rem) clamp(2rem,3.5vw,3.5rem);border-right:1px solid rgba(168,132,58,.15);background:#FFFFFF;position:relative;overflow:hidden;transition:background .35s;}
-.bc:last-child{border-right:none}
-.bc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2.5rem;}
-.bc-num{font-family:'Cinzel',serif;font-size:3.5rem;font-weight:600;color:rgba(168,132,58,.12);line-height:1;letter-spacing:-.04em;}
-.bc-line{width:2rem;height:2px;background:var(--g);margin-top:.8rem;opacity:.6}
-.bc:hover{background:#FDF8F0}
-.bc-title{font-family:'Noto Serif KR',serif;font-size:1.15rem;font-weight:700;color:#0E0C09;margin-bottom:1.2rem;line-height:1.3;}
-.bc-desc{font-size:.88rem;font-weight:300;line
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma Soul Seoul | Protocol 2031</title>
+    <style>
+        :root { --orange: #FF4D00; --bg: #F2F2F2; --black: #111; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        body { background: var(--bg); color: var(--black); overflow-x: hidden; }
+
+        /* THE GATEKEEPER */
+        #gatekeeper {
+            position: fixed; inset: 0; background: var(--black); color: white;
+            z-index: 1000; display: flex; flex-direction: column; justify-content: space-between;
+            padding: 40px; transition: transform 0.8s cubic-bezier(0.82, 0, 0.18, 1);
+        }
+        .gate-header { font-family: monospace; font-size: 10px; opacity: 0.5; display: flex; justify-content: space-between; }
+        .gate-title { font-size: 10vw; font-weight: 900; line-height: 0.8; text-transform: uppercase; font-style: italic; }
+        .gate-btn { background: white; color: black; padding: 20px 40px; border-radius: 100px; font-weight: 900; border: none; cursor: pointer; align-self: flex-end; }
+        .gate-btn:hover { background: var(--orange); color: white; }
+
+        /* THE GRID SYSTEM */
+        nav { sticky top: 0; background: var(--bg); border-bottom: 2px solid var(--black); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .hero { display: grid; grid-template-columns: 1fr; border-bottom: 2px solid var(--black); }
+        @media (min-width: 768px) { .hero { grid-template-columns: 7fr 5fr; } }
+        .hero-left { padding: 60px; border-right: 2px solid var(--black); min-height: 60vh; display: flex; flex-direction: column; justify-content: space-between; }
+        .hero-right { display: flex; flex-direction: column; }
+        .box { padding: 40px; border-bottom: 2px solid var(--black); flex: 1; }
+        .box:last-child { border-bottom: 0; background: var(--black); color: white; }
+        
+        .huge-text { font-size: 12vw; font-weight: 900; line-height: 0.75; text-transform: uppercase; font-style: italic; }
+        .marquee { background: var(--orange); padding: 20px 0; border-bottom: 2px solid var(--black); overflow: hidden; white-space: nowrap; }
+        .marquee span { font-size: 30px; font-weight: 900; text-transform: uppercase; display: inline-block; animation: scroll 20s linear infinite; }
+        
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    </style>
+</head>
+<body>
+
+    <div id="gatekeeper">
+        <div class="gate-header"><span>ACCESS_RESTRICTED</span><span>PROTOCOL 2031</span></div>
+        <div class="gate-title">이 계정은<br>모두를 위한 곳이<br>아닙니다.</div>
+        <button class="gate-btn" onclick="document.
