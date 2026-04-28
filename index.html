@@ -1,76 +1,133 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Activity, Zap, Wind } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ShieldAlert, ArrowDown, Zap, Lock, Eye } from 'lucide-react';
 
-const StudioJT_Style = () => {
+const SomaSoulStudioJT = () => {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
   return (
-    <div className="bg-[#f0f0f0] text-[#1a1a1a] font-sans selection:bg-orange-500 selection:text-white">
+    <div className="bg-[#F2F2F2] text-[#111] min-h-screen font-sans selection:bg-[#FF4D00] selection:text-white">
       
-      {/* 1. BOLD TOP NAVIGATION */}
-      <nav className="flex justify-between items-center p-6 border-b border-black">
-        <div className="text-xl font-black uppercase tracking-tighter">Soma Soul Seoul</div>
-        <div className="hidden md:flex gap-12 font-medium text-sm uppercase">
-          {['Movement', 'Soul-Work', 'Studio', 'Contact'].map(link => (
-            <a key={link} href="#" className="hover:line-through transition-all">{link}</a>
-          ))}
+      <AnimatePresence>
+        {!isAuthorized && (
+          <motion.div 
+            exit={{ y: '-100%' }}
+            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+            className="fixed inset-0 z-[100] bg-[#111] text-white p-6 flex flex-col justify-between"
+          >
+            <div className="flex justify-between items-start border-b border-white/20 pb-4">
+              <span className="text-xs tracking-widest font-mono">SYSTEM STATUS: OPERATIONAL</span>
+              <span className="text-xs font-mono">PROTOCOL 2031</span>
+            </div>
+            
+            <div className="max-w-4xl">
+              <h2 className="text-[8vw] leading-[0.85] font-black uppercase italic tracking-tighter mb-8">
+                이 계정은<br />모두를 위한 곳이<br />아닙니다.
+              </h2>
+              <p className="text-lg md:text-2xl font-light opacity-80 max-w-2xl">
+                우리는 편한 육아를 다루지 않습니다. 아이가 이 세상에서 진짜 의미 있는 사람이 되는 구조를 다룹니다.
+              </p>
+            </div>
+
+            <div className="flex justify-between items-end border-t border-white/20 pt-8">
+              <div className="flex gap-4">
+                <ShieldAlert className="text-[#FF4D00]" />
+                <span className="text-xs uppercase tracking-widest self-center">Warning: Sovereign Growth Protocol</span>
+              </div>
+              <button 
+                onClick={() => setIsAuthorized(true)}
+                className="group flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-[#FF4D00] hover:text-white transition-all"
+              >
+                PROCEED IF YOU AGREE <ArrowDown className="group-hover:rotate-180 transition-transform" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* MAIN NAVIGATION */}
+      <nav className="sticky top-0 z-50 bg-[#F2F2F2]/80 backdrop-blur-md border-b-2 border-black flex justify-between items-center px-6 py-4">
+        <h1 className="font-black text-xl tracking-tighter uppercase">Soma Soul Seoul</h1>
+        <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest">
+          <a href="#" className="border-b-2 border-transparent hover:border-black">Beliefs</a>
+          <a href="#" className="border-b-2 border-transparent hover:border-black">The Glass Child</a>
+          <a href="#" className="border-b-2 border-transparent hover:border-black text-[#FF4D00]">Newsletter 05.23</a>
         </div>
-        <div className="bg-black text-white px-4 py-2 text-xs font-bold rounded-full cursor-pointer">BOOK NOW</div>
       </nav>
 
-      {/* 2. ASYMMETRICAL HERO GRID */}
-      <section className="grid grid-cols-1 md:grid-cols-12 min-h-[80vh] border-b border-black">
-        <div className="md:col-span-7 p-12 border-r border-black flex flex-col justify-end">
-          <motion.h1 
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            className="text-[12vw] leading-[0.8] font-black uppercase italic tracking-tighter"
-          >
-            Body <br /> Logic.
-          </motion.h1>
+      {/* HERO / THE CORE PROTOCOL */}
+      <section className="grid md:grid-cols-2 border-b-2 border-black">
+        <div className="p-12 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between min-h-[60vh]">
+          <span className="text-xs font-mono uppercase bg-black text-white w-fit px-2 py-1">Mission_Statement</span>
+          <h2 className="text-[10vw] md:text-[6vw] font-black leading-none uppercase italic tracking-tighter mt-12">
+            The <br />Architecture <br />Of Sovereign <br />Growth
+          </h2>
         </div>
-        <div className="md:col-span-5 p-12 bg-orange-500 text-white flex flex-col justify-between">
-          <div className="flex justify-between items-start">
-            <Activity size={48} strokeWidth={1} />
-            <span className="text-sm font-bold tracking-widest uppercase">Est. 2026</span>
+        <div className="p-12 flex flex-col justify-between bg-white">
+          <div className="space-y-8">
+            <div className="group">
+              <span className="text-[10px] font-black text-[#FF4D00] uppercase">Not For You If:</span>
+              <p className="text-xl mt-2 font-medium border-l-4 border-black pl-4">경쟁은 나쁘다고 가르치고 싶다면 / 학교 미술 시간이 쓸모없다고 느껴진다면</p>
+            </div>
+            <div className="group">
+              <span className="text-[10px] font-black text-green-600 uppercase">Stay If:</span>
+              <p className="text-xl mt-2 font-medium border-l-4 border-green-600 pl-4">아이가 넘어지는 걸 지켜보며 기다릴 수 있는 부모</p>
+            </div>
           </div>
-          <p className="text-2xl font-medium leading-tight">
-            We don't just move; we recalibrate the human frequency through somatic precision.
+          <div className="mt-12 p-6 border-2 border-black rounded-xl italic">
+            "아이가 이 세상에서 진짜 의미 있는 사람이 되는 구조를 다룹니다."
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE BELIEVE - GRID SYSTEM */}
+      <section className="bg-[#111] text-white">
+        <div className="grid md:grid-cols-3">
+          {[
+            { id: "01", title: "몸이 먼저입니다", desc: "몸은 뇌가 세상을 이해하는 첫 번째 언어입니다. 깊이 생각하는 아이는 먼저 깊이 느껴본 아이입니다." },
+            { id: "02", title: "순서가 있습니다", desc: "성장은 빠르게 만드는 것이 아니라 순서대로 쌓는 것입니다. 순서를 건너뛰면 내면이 비어 있게 됩니다." },
+            { id: "03", title: "판단하는 힘", desc: "AI가 답을 넘겨주는 세상에서 가장 희소한 능력은 스스로 판단하는 힘입니다." }
+          ].map((item) => (
+            <div key={item.id} className="p-12 border-r border-white/10 border-b md:border-b-0 hover:bg-[#FF4D00] transition-colors group cursor-crosshair">
+              <span className="text-5xl font-black opacity-20 group-hover:opacity-100">{item.id}</span>
+              <h3 className="text-3xl font-black mt-8 mb-4 uppercase italic">{item.title}</h3>
+              <p className="opacity-60 group-hover:opacity-100 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* THE GLASS CHILD - FULL WIDTH BREAK */}
+      <section className="p-12 md:p-24 bg-white border-b-2 border-black text-center">
+        <span className="inline-block px-4 py-1 border-2 border-black font-black text-xs uppercase mb-8">The Critical Analysis</span>
+        <h2 className="text-[12vw] font-black tracking-tighter uppercase leading-none mb-12">The Glass <br />Child</h2>
+        <div className="max-w-3xl mx-auto text-left">
+          <p className="text-2xl leading-snug">
+            부모가 모든 것을 대신해 주는 것 — 아이가 할 일이라고는 오직 최고 명문대에 가고 상위권을 유지하는 것뿐인, 결핍 없는 삶. 
+            하지만 그렇게 자란 아이는 <span className="bg-[#FF4D00] text-white px-2">유리와 같습니다.</span> 깨지면 다시 붙지 않아요.
           </p>
         </div>
       </section>
 
-      {/* 3. INTERACTIVE SERVICE CARDS (The Studio-JT "Hover" Effect) */}
-      <section className="grid grid-cols-1 md:grid-cols-3 border-b border-black">
-        {[
-          { title: "Soma Breath", icon: <Wind />, color: "hover:bg-blue-400" },
-          { title: "Soul Flow", icon: <Zap />, color: "hover:bg-yellow-400" },
-          { title: "Seoul Studio", icon: <ArrowRight />, color: "hover:bg-green-400" }
-        ].map((item, i) => (
-          <motion.div 
-            key={i}
-            whileHover={{ scale: 0.98 }}
-            className={`p-16 border-r last:border-r-0 border-black transition-colors duration-300 ${item.color} group cursor-pointer`}
-          >
-            <div className="mb-12">{item.icon}</div>
-            <h3 className="text-4xl font-black uppercase mb-4">{item.title}</h3>
-            <p className="opacity-0 group-hover:opacity-100 transition-opacity text-sm font-bold">VIEW EXHIBIT →</p>
-          </motion.div>
-        ))}
-      </section>
-
-      {/* 4. MARQUEE (The "Energy" Element) */}
-      <div className="py-4 bg-black text-white overflow-hidden whitespace-nowrap border-b border-black">
-        <motion.div 
-          animate={{ x: [0, -1000] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-          className="text-4xl font-black uppercase inline-block"
-        >
-          SOMA SOUL SEOUL • REDEFINING MOVEMENT • EST 2026 • THE FUTURE OF BODY WORK • 
-        </motion.div>
-      </div>
-
+      {/* FOOTER / NEWSLETTER */}
+      <footer className="p-12 bg-[#F2F2F2]">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-12">
+          <div>
+            <p className="font-mono text-xs mb-4">SYSTEM_OPERATIONAL // 2026</p>
+            <h4 className="text-4xl font-black tracking-tighter uppercase">Protocol 2031 <br />Newsletter</h4>
+            <p className="mt-2 text-[#FF4D00] font-bold">COMING MAY 23</p>
+          </div>
+          <div className="w-full md:w-1/3">
+            <input 
+              type="email" 
+              placeholder="ENTER EMAIL FOR ACCESS" 
+              className="w-full bg-transparent border-b-4 border-black p-4 text-xl font-black uppercase focus:outline-none focus:border-[#FF4D00]"
+            />
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
 
-export default StudioJT_Style;
+export default SomaSoulStudioJT;
