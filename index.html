@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soma Soul Seoul | Protocol 2031</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Soma Soul Seoul | Sovereign Growth 2031</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #F9F7F2;      /* Warm Paper */
-            --text-main: #1A1A1A;     /* Deep Ink */
-            --text-muted: #666666;    /* Subtle metadata */
+            --bg-color: #FDFCFA;      /* Upgraded warm parchment */
+            --text-main: #111111;     /* Deep near-black */
+            --text-muted: #777777;    /* Subtle metadata */
             --accent: #E36239;        /* Signature Orange */
-            --border: rgba(0,0,0,0.08);
-            --max-width: 680px;
+            --border: rgba(0,0,0,0.06);
+            --max-width: 720px;       /* Editorial reading width */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,135 +21,163 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            line-height: 1.8;
+            font-weight: 300; /* Modern light weight for body */
+            line-height: 1.85;
             -webkit-font-smoothing: antialiased;
         }
 
         /* TOP ANNOUNCEMENT BAR */
         .top-bar {
-            background: #fff;
             border-bottom: 1px solid var(--border);
-            padding: 12px;
+            padding: 16px;
             text-align: center;
             font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            color: var(--accent);
+            text-transform: uppercase;
         }
 
-        /* HEADER & LOGO */
+        /* THE BRANDING (LOGO AREA) */
         header {
-            padding: 60px 20px;
+            padding: 100px 20px 60px 20px;
             text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-box {
+            display: inline-block;
+            border: 2px solid var(--text-main);
+            padding: 20px 40px;
+            margin-bottom: 20px;
         }
 
         .logo-text {
             font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            color: var(--text-main);
         }
 
         .tagline {
-            font-family: 'Lora', serif;
+            font-family: 'Playfair Display', serif;
             font-style: italic;
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
         /* CONTENT LAYOUT */
         main {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 24px 100px 24px;
+            padding: 0 24px 120px 24px;
         }
 
         .section-label {
             text-transform: uppercase;
             font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--accent);
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-top: 60px;
             margin-bottom: 1.5rem;
             display: block;
             text-align: center;
         }
 
+        /* HIGH-END TYPOGRAPHY */
         h1, h2, h3 {
-            font-family: 'Lora', serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
+            line-height: 1.25;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
         }
 
-        h1 { font-size: 2.4rem; text-align: center; }
-        h2 { font-size: 2rem; margin-top: 4rem; }
+        h1 { font-size: 3rem; text-align: center; }
+        h2 { font-size: 2.2rem; margin-top: 5rem; }
+        h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1.5px;}
 
         .manifesto-intro {
-            font-size: 1.4rem;
-            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
             text-align: center;
-            margin-bottom: 4rem;
-            line-height: 1.6;
+            margin-bottom: 6rem;
+            line-height: 1.7;
+            font-weight: 400;
         }
 
         .grid-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 4rem;
-            padding: 40px 0;
+            gap: 60px;
+            margin-bottom: 6rem;
+            padding: 60px 0;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
 
-        .grid-split h3 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: 1rem; }
-        .grid-split ul { list-style: none; font-size: 1rem; color: var(--text-muted); }
-        .grid-split li { margin-bottom: 12px; }
+        .grid-split ul { list-style: none; font-size: 1.05rem; color: var(--text-main); }
+        .grid-split li { margin-bottom: 18px; position: relative; padding-left: 20px; }
+        .grid-split li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
 
         .glass-child {
-            background: rgba(255,255,255,0.5);
-            padding: 40px;
-            border-radius: 8px;
-            margin: 4rem 0;
+            margin: 6rem 0;
+            padding-left: 30px;
+            border-left: 3px solid var(--accent);
         }
 
         /* CORE BELIEFS */
         .belief {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            align-items: start;
         }
 
         .belief-num {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
+            font-size: 2rem;
             color: var(--accent);
-            display: block;
-            margin-bottom: 0.5rem;
+            line-height: 1;
+            opacity: 0.3;
         }
+        
+        .belief h3 { margin-bottom: 0.5rem; margin-top: 5px;}
 
         /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
+        /* MODIFIED CTA (FANCY BOX) */
         .cta-box {
-            background: #1A1A1A;
-            color: #fff;
-            padding: 40px;
+            border: 1px solid var(--text-main);
+            padding: 60px;
             text-align: center;
-            border-radius: 4px;
-            margin-top: 4rem;
+            margin-top: 6rem;
         }
 
-        @media (max-width: 600px) {
-            .grid-split { grid-template-columns: 1fr; }
-            h1 { font-size: 1.8rem; }
+        .cta-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 15px;}
+        .cta-subtext { font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; color: var(--accent);}
+
+        @media (max-width: 700px) {
+            .grid-split { grid-template-columns: 1fr; gap: 40px;}
+            h1 { font-size: 2.2rem; }
+            .manifesto-intro { font-size: 1.25rem; }
+            .logo-text { font-size: 1.2rem; }
+            .belief { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -160,69 +188,84 @@
     </div>
 
     <header>
-        <div class="logo-text">Soma Soul Seoul</div>
+        <div class="logo-box">
+            <div class="logo-text">Soma Soul Seoul</div>
+        </div>
         <div class="tagline">The Architecture of Sovereign Growth</div>
     </header>
 
     <main>
-        <span class="section-label">Manifesto</span>
+        <span class="section-label">A Core Protocol</span>
         <h1>이 계정은<br>모두를 위한 곳이 아닙니다.</h1>
         
         <div class="manifesto-intro">
             우리는 편한 육아를 다루지 않습니다.<br>
-            아이가 이 세상에서 <strong>진짜 의미 있는 사람이 되는 구조</strong>를 다룹니다.
+            아이가 이 세상에서 <i>진짜 의미 있는 사람이 되는 구조</i>를 다룹니다.
         </div>
 
         <div class="grid-split">
             <div>
                 <h3>여기는 맞지 않습니다</h3>
                 <ul>
-                    <li>• 경쟁은 나쁘다고 가르치고 싶다면</li>
-                    <li>• 학교 미술 시간이 쓸모없다고 느껴진다면</li>
-                    <li>• 내 아이가 남들보다 특별해 보이기만 하면 된다면</li>
+                    <li>경쟁은 나쁘다고 가르치고 싶다면</li>
+                    <li>학교 미술 시간이 쓸모없다고 느껴진다면</li>
+                    <li>내 아이가 남들보다 특별해 보이기만 하면 된다면</li>
+                    <li>아이에게 최고만 주는 것이 사랑이라고 믿는다면</li>
                 </ul>
             </div>
             <div>
                 <h3>여기 있어도 됩니다</h3>
                 <ul>
-                    <li>• 아이가 넘어지는 걸 지켜보며 기다릴 수 있는 부모</li>
-                    <li>• 노력의 기쁨과 사람의 가치를 아는 부모</li>
-                    <li>• 세상에 진짜 필요한 사람이 되길 원하는 부모</li>
+                    <li>아이가 넘어지는 걸 지켜보며 기다릴 수 있는 부모</li>
+                    <li>목적을 알고 노력의 기쁨을 알고 사람의 가치를 아는 부모</li>
+                    <li>세상에 나갔을 때 진짜 필요한 사람이 되길 원하는 부모</li>
                 </ul>
             </div>
         </div>
 
         <section class="glass-child">
-            <span class="section-label" style="text-align: left;">The Glass Child</span>
+            <span class="section-label" style="text-align: left; margin-top: 0;">The Glass Child</span>
             <h2>아이를 왕으로 느끼게 하는 건 생각보다 쉽습니다.</h2>
-            <p>최고로 비싼 장난감, 최고급 여행지, 이름 있는 브랜드의 옷. 다 줄 수 있어요. 그게 사랑처럼 느껴지니까요.</p>
-            <p>하지만 부모가 모든 것을 대신해 주는 결핍 없는 삶 속에서 자란 아이는 <strong>유리와 같습니다.</strong></p>
-            <p>깨지면 다시 붙지 않아요.</p>
+            <p style="margin-bottom: 1.5rem;">최고로 비싼 장난감, 최고급 여행지, 이름 있는 브랜드의 옷. 다 줄 수 있어요. 그게 사랑처럼 느껴지니까요.</p>
+            <p style="margin-bottom: 1.5rem;">부모가 모든 것을 대신해 주는 것 — 아이가 할 일이라고는 오직 최고 명문대에 가고 상위권을 유지하는 것뿐인, 결핍 없는 삶.</p>
+            <p>하지만 그렇게 자란 아이는 <b>유리와 같습니다.</b> 깨지면 다시 붙지 않아요.</p>
         </section>
 
         <span class="section-label">What We Believe</span>
         
         <div class="belief">
             <span class="belief-num">01</span>
-            <h3>몸이 먼저입니다</h3>
-            <p>몸은 뇌가 세상을 이해하는 첫 번째 언어입니다. 깊이 생각하는 아이는 먼저 깊이 느껴본 아이입니다.</p>
+            <div>
+                <h3>몸이 먼저입니다</h3>
+                <p>몸은 뇌가 세상을 이해하는 첫 번째 언어입니다. 깊이 생각하는 아이는 먼저 깊이 느껴본 아이입니다.</p>
+            </div>
         </div>
 
         <div class="belief">
             <span class="belief-num">02</span>
-            <h3>순서가 있습니다</h3>
-            <p>성장은 빠르게 만드는 것이 아니라 순서대로 쌓는 것입니다. 순서를 건너뛰면 겉은 빠르지만 내면이 비어 있게 됩니다.</p>
+            <div>
+                <h3>순서가 있습니다</h3>
+                <p>성장은 빠르게 만드는 것이 아니라 순서대로 쌓는 것입니다. 순서를 건너뛰면 겉은 빠르지만 내면이 비어 있게 됩니다.</p>
+            </div>
         </div>
 
         <div class="belief">
             <span class="belief-num">03</span>
-            <h3>판단하는 힘이 전부입니다</h3>
-            <p>AI가 답을 넘겨주는 세상에서 가장 희소한 능력은 스스로 판단하는 힘입니다. 그것이 결국 아이를 지키는 힘입니다.</p>
+            <div>
+                <h3>판단하는 힘이 전부입니다</h3>
+                <p>AI가 답을 넘겨주는 세상에서 가장 희소한 능력은 스스로 판단하는 힘입니다. 그것이 결국 아이를 지키는 힘입니다.</p>
+            </div>
         </div>
+        
+        <p style="text-align: center; margin-top: 4rem; font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--text-muted);">
+            SomaSoul Seoul은 그 힘을 키웁니다.<br>
+            아이의 속도를 존중하고, 몸과 감각을 통해 배우게 하며,<br>
+            어떤 시대에도 스스로 설 수 있도록.
+        </p>
 
         <div class="cta-box">
-            <p style="margin-bottom: 20px; font-weight: 600;">어려운 길을 선택한 부모를 위한 곳입니다.</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">Protocol 2031 Newsletter · Coming May 23</p>
+            <div class="cta-text">어려운 길을 선택한 부모를 위한 곳입니다.</div>
+            <div class="cta-subtext">Protocol 2031 Newsletter · Coming May 23</div>
         </div>
     </main>
 
