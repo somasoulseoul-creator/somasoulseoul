@@ -1,128 +1,154 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldAlert, ArrowDown, Zap, Lock, Eye } from 'lucide-react';
+import { ShieldAlert, ArrowDown, Activity, ChevronRight } from 'lucide-react';
 
-const SomaSoulStudioJT = () => {
+const SomaSoulSeoul = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
   return (
-    <div className="bg-[#F2F2F2] text-[#111] min-h-screen font-sans selection:bg-[#FF4D00] selection:text-white">
+    <div className="bg-[#F2F2F2] text-[#111] min-h-screen font-sans selection:bg-[#FF4D00] selection:text-white overflow-x-hidden">
       
+      {/* 1. GATEKEEPER TERMINAL */}
       <AnimatePresence>
         {!isAuthorized && (
           <motion.div 
-            exit={{ y: '-100%' }}
-            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[100] bg-[#111] text-white p-6 flex flex-col justify-between"
+            initial={{ opacity: 1 }}
+            exit={{ y: '-100%', opacity: 0 }}
+            transition={{ duration: 0.9, ease: [0.82, 0, 0.18, 1] }}
+            className="fixed inset-0 z-[100] bg-[#111] text-white p-6 md:p-12 flex flex-col justify-between"
           >
-            <div className="flex justify-between items-start border-b border-white/20 pb-4">
-              <span className="text-xs tracking-widest font-mono">SYSTEM STATUS: OPERATIONAL</span>
-              <span className="text-xs font-mono">PROTOCOL 2031</span>
+            <div className="flex justify-between font-mono text-[10px] opacity-40 uppercase tracking-[0.3em]">
+              <span>Soma Soul Seoul // Access Restricted</span>
+              <span>Protocol 2031</span>
             </div>
             
-            <div className="max-w-4xl">
-              <h2 className="text-[8vw] leading-[0.85] font-black uppercase italic tracking-tighter mb-8">
+            <div className="max-w-6xl">
+              <h2 className="text-[12vw] md:text-[8vw] font-black leading-[0.8] uppercase italic tracking-tighter mb-10">
                 이 계정은<br />모두를 위한 곳이<br />아닙니다.
               </h2>
-              <p className="text-lg md:text-2xl font-light opacity-80 max-w-2xl">
-                우리는 편한 육아를 다루지 않습니다. 아이가 이 세상에서 진짜 의미 있는 사람이 되는 구조를 다룹니다.
+              <p className="text-xl md:text-3xl font-light opacity-90 max-w-3xl leading-tight">
+                우리는 편한 육아를 다루지 않습니다. <br/>
+                아이가 이 세상에서 <span className="text-[#FF4D00] font-bold">진짜 의미 있는 사람</span>이 되는 구조를 다룹니다.
               </p>
             </div>
 
-            <div className="flex justify-between items-end border-t border-white/20 pt-8">
-              <div className="flex gap-4">
-                <ShieldAlert className="text-[#FF4D00]" />
-                <span className="text-xs uppercase tracking-widest self-center">Warning: Sovereign Growth Protocol</span>
+            <div className="flex flex-col md:flex-row justify-between items-end gap-8 border-t border-white/10 pt-8">
+              <div className="flex items-center gap-4 text-[#FF4D00]">
+                <ShieldAlert size={32} />
+                <span className="text-xs font-mono uppercase tracking-widest">Sovereign Growth Protocol Authorized Personnel Only</span>
               </div>
               <button 
                 onClick={() => setIsAuthorized(true)}
-                className="group flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-[#FF4D00] hover:text-white transition-all"
+                className="w-full md:w-auto bg-white text-black px-12 py-6 rounded-full font-black uppercase text-sm hover:bg-[#FF4D00] hover:text-white transition-all active:scale-95"
               >
-                PROCEED IF YOU AGREE <ArrowDown className="group-hover:rotate-180 transition-transform" />
+                PROCEED IF YOU AGREE
               </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* MAIN NAVIGATION */}
-      <nav className="sticky top-0 z-50 bg-[#F2F2F2]/80 backdrop-blur-md border-b-2 border-black flex justify-between items-center px-6 py-4">
-        <h1 className="font-black text-xl tracking-tighter uppercase">Soma Soul Seoul</h1>
-        <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest">
-          <a href="#" className="border-b-2 border-transparent hover:border-black">Beliefs</a>
-          <a href="#" className="border-b-2 border-transparent hover:border-black">The Glass Child</a>
-          <a href="#" className="border-b-2 border-transparent hover:border-black text-[#FF4D00]">Newsletter 05.23</a>
+      {/* 2. NAVIGATION (Heavy Border) */}
+      <nav className="sticky top-0 z-50 bg-[#F2F2F2]/90 backdrop-blur-xl border-b-2 border-black flex justify-between items-center px-6 py-5">
+        <h1 className="font-black text-2xl tracking-tighter uppercase italic">Soma Soul Seoul</h1>
+        <div className="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-widest">
+          <a href="#beliefs" className="hover:text-[#FF4D00] transition-colors italic">01. Beliefs</a>
+          <a href="#glass" className="hover:text-[#FF4D00] transition-colors italic">02. The Glass Child</a>
+          <button className="bg-black text-white px-5 py-2 rounded-full text-[10px] hover:bg-[#FF4D00] transition-colors">MAY 23</button>
         </div>
       </nav>
 
-      {/* HERO / THE CORE PROTOCOL */}
-      <section className="grid md:grid-cols-2 border-b-2 border-black">
-        <div className="p-12 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between min-h-[60vh]">
-          <span className="text-xs font-mono uppercase bg-black text-white w-fit px-2 py-1">Mission_Statement</span>
-          <h2 className="text-[10vw] md:text-[6vw] font-black leading-none uppercase italic tracking-tighter mt-12">
-            The <br />Architecture <br />Of Sovereign <br />Growth
+      {/* 3. HERO GRID (The Filter) */}
+      <section className="grid grid-cols-1 md:grid-cols-12 border-b-2 border-black">
+        <div className="md:col-span-7 p-8 md:p-16 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between min-h-[70vh]">
+          <div className="flex items-center gap-2 font-mono text-[10px] font-bold italic">
+            <div className="w-2 h-2 bg-[#FF4D00] rounded-full animate-pulse" />
+            <span>SYSTEM_OPERATIONAL // 2026</span>
+          </div>
+          <h2 className="text-[14vw] md:text-[9vw] font-black leading-[0.75] uppercase italic tracking-tighter mt-12 mb-8">
+            The <br />Architecture <br /> Of Sovereign <br /> Growth
           </h2>
         </div>
-        <div className="p-12 flex flex-col justify-between bg-white">
-          <div className="space-y-8">
-            <div className="group">
-              <span className="text-[10px] font-black text-[#FF4D00] uppercase">Not For You If:</span>
-              <p className="text-xl mt-2 font-medium border-l-4 border-black pl-4">경쟁은 나쁘다고 가르치고 싶다면 / 학교 미술 시간이 쓸모없다고 느껴진다면</p>
-            </div>
-            <div className="group">
-              <span className="text-[10px] font-black text-green-600 uppercase">Stay If:</span>
-              <p className="text-xl mt-2 font-medium border-l-4 border-green-600 pl-4">아이가 넘어지는 걸 지켜보며 기다릴 수 있는 부모</p>
-            </div>
+        <div className="md:col-span-5 flex flex-col">
+          <div className="p-10 border-b-2 border-black bg-white flex-1 hover:bg-[#FF4D00] hover:text-white transition-colors group">
+            <span className="text-[10px] font-black uppercase border-b border-current mb-6 inline-block">여기는 맞지 않습니다</span>
+            <ul className="text-xl font-bold space-y-4 italic leading-none">
+              <li>• 경쟁은 나쁘다고 가르치고 싶다면</li>
+              <li>• 학교 미술 시간이 쓸모없다고 느껴진다면</li>
+              <li>• 내 아이가 특별해 보이기만 하면 된다면</li>
+            </ul>
           </div>
-          <div className="mt-12 p-6 border-2 border-black rounded-xl italic">
-            "아이가 이 세상에서 진짜 의미 있는 사람이 되는 구조를 다룹니다."
+          <div className="p-10 bg-[#111] text-white flex-1 group">
+            <span className="text-[10px] font-black uppercase border-b border-green-500 text-green-500 mb-6 inline-block">여기 있어도 됩니다</span>
+            <ul className="text-xl font-bold space-y-4 italic leading-none opacity-90">
+              <li>• 아이가 넘어지는 걸 지켜볼 수 있는 부모</li>
+              <li>• 노력의 기쁨과 사람의 가치를 아는 부모</li>
+              <li>• 진짜 필요한 사람이 되길 원하는 부모</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* WHAT WE BELIEVE - GRID SYSTEM */}
-      <section className="bg-[#111] text-white">
-        <div className="grid md:grid-cols-3">
-          {[
-            { id: "01", title: "몸이 먼저입니다", desc: "몸은 뇌가 세상을 이해하는 첫 번째 언어입니다. 깊이 생각하는 아이는 먼저 깊이 느껴본 아이입니다." },
-            { id: "02", title: "순서가 있습니다", desc: "성장은 빠르게 만드는 것이 아니라 순서대로 쌓는 것입니다. 순서를 건너뛰면 내면이 비어 있게 됩니다." },
-            { id: "03", title: "판단하는 힘", desc: "AI가 답을 넘겨주는 세상에서 가장 희소한 능력은 스스로 판단하는 힘입니다." }
-          ].map((item) => (
-            <div key={item.id} className="p-12 border-r border-white/10 border-b md:border-b-0 hover:bg-[#FF4D00] transition-colors group cursor-crosshair">
-              <span className="text-5xl font-black opacity-20 group-hover:opacity-100">{item.id}</span>
-              <h3 className="text-3xl font-black mt-8 mb-4 uppercase italic">{item.title}</h3>
-              <p className="opacity-60 group-hover:opacity-100 leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 4. MARQUEE (The Energy Element) */}
+      <div className="py-6 bg-[#FF4D00] text-black border-b-2 border-black overflow-hidden flex font-black uppercase text-3xl italic">
+        <motion.div 
+          animate={{ x: [0, -1500] }}
+          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          className="whitespace-nowrap flex gap-12"
+        >
+          {Array(10).fill("Protocol 2031 • Sovereign Growth • Soma Soul Seoul •").map((txt, i) => <span key={i}>{txt}</span>)}
+        </motion.div>
+      </div>
 
-      {/* THE GLASS CHILD - FULL WIDTH BREAK */}
-      <section className="p-12 md:p-24 bg-white border-b-2 border-black text-center">
-        <span className="inline-block px-4 py-1 border-2 border-black font-black text-xs uppercase mb-8">The Critical Analysis</span>
-        <h2 className="text-[12vw] font-black tracking-tighter uppercase leading-none mb-12">The Glass <br />Child</h2>
-        <div className="max-w-3xl mx-auto text-left">
-          <p className="text-2xl leading-snug">
-            부모가 모든 것을 대신해 주는 것 — 아이가 할 일이라고는 오직 최고 명문대에 가고 상위권을 유지하는 것뿐인, 결핍 없는 삶. 
-            하지만 그렇게 자란 아이는 <span className="bg-[#FF4D00] text-white px-2">유리와 같습니다.</span> 깨지면 다시 붙지 않아요.
-          </p>
-        </div>
-      </section>
-
-      {/* FOOTER / NEWSLETTER */}
-      <footer className="p-12 bg-[#F2F2F2]">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-          <div>
-            <p className="font-mono text-xs mb-4">SYSTEM_OPERATIONAL // 2026</p>
-            <h4 className="text-4xl font-black tracking-tighter uppercase">Protocol 2031 <br />Newsletter</h4>
-            <p className="mt-2 text-[#FF4D00] font-bold">COMING MAY 23</p>
+      {/* 5. WHAT WE BELIEVE (Interactive Grid) */}
+      <section id="beliefs" className="grid grid-cols-1 md:grid-cols-3 border-b-2 border-black bg-white">
+        {[
+          { id: "01", title: "몸이 먼저입니다", desc: "몸은 뇌가 세상을 이해하는 첫 번째 언어입니다. 깊이 생각하는 아이는 먼저 깊이 느껴본 아이입니다." },
+          { id: "02", title: "순서가 있습니다", desc: "성장은 빠르게 만드는 것이 아니라 순서대로 쌓는 것입니다. 순서를 건너뛰면 내면이 비어 있게 됩니다." },
+          { id: "03", title: "판단하는 힘", desc: "AI가 답을 주는 세상에서 가장 희소한 능력은 스스로 판단하는 힘입니다. 그것이 결국 아이를 지키는 힘입니다." }
+        ].map((item) => (
+          <div key={item.id} className="p-12 border-b-2 last:border-b-0 md:border-b-0 md:border-r-2 last:border-r-0 border-black hover:bg-black hover:text-white transition-all group cursor-crosshair">
+            <span className="font-mono text-xs text-[#FF4D00] font-bold italic">{item.id} // CORE_BELIEF</span>
+            <h3 className="text-4xl font-black mt-8 mb-6 uppercase italic tracking-tighter leading-none">{item.title}</h3>
+            <p className="text-lg opacity-70 group-hover:opacity-100 transition-opacity leading-tight">{item.desc}</p>
           </div>
-          <div className="w-full md:w-1/3">
+        ))}
+      </section>
+
+      {/* 6. THE GLASS CHILD (Dramatic Analysis) */}
+      <section id="glass" className="p-12 md:p-32 bg-white border-b-2 border-black text-center relative overflow-hidden">
+        <div className="relative z-10">
+          <span className="inline-block px-4 py-1 border-2 border-black font-black text-xs uppercase mb-8 italic">The Critical Analysis</span>
+          <h2 className="text-[14vw] font-black tracking-tighter uppercase leading-[0.8] mb-12 italic">The Glass <br />Child</h2>
+          <div className="max-w-4xl mx-auto text-left space-y-8 text-2xl md:text-4xl font-medium leading-[1.1]">
+            <p>최고로 비싼 장난감, 최고급 여행지, 브랜드 옷. 다 줄 수 있어요. 그게 사랑처럼 느껴지니까요.</p>
+            <p className="bg-black text-white inline px-2 italic">하지만 그렇게 자란 아이는 유리와 같습니다.</p>
+            <p className="text-[#FF4D00] font-black text-4xl md:text-6xl uppercase italic underline decoration-8 underline-offset-8">깨지면 다시 붙지 않아요.</p>
+          </div>
+        </div>
+        <Activity className="absolute -bottom-20 -right-20 text-[#111] opacity-[0.03] size-[600px] pointer-events-none" />
+      </section>
+
+      {/* 7. FOOTER / PROTOCOL ACCESS */}
+      <footer className="p-12 md:p-24 bg-[#F2F2F2] flex flex-col md:flex-row justify-between items-end gap-16">
+        <div className="space-y-6">
+          <h4 className="text-[8vw] md:text-[5vw] font-black italic tracking-tighter leading-none uppercase">Protocol 2031 <br/> Newsletter</h4>
+          <p className="text-[#FF4D00] font-black text-2xl uppercase italic animate-pulse">Coming May 23</p>
+          <div className="text-[10px] font-mono opacity-40 space-y-1 uppercase">
+            <p>© 2026 Soma Soul Seoul</p>
+            <p>SEOUL // SOVEREIGN GROWTH</p>
+          </div>
+        </div>
+        <div className="w-full md:w-1/2">
+          <div className="relative group border-b-4 border-black">
             <input 
               type="email" 
               placeholder="ENTER EMAIL FOR ACCESS" 
-              className="w-full bg-transparent border-b-4 border-black p-4 text-xl font-black uppercase focus:outline-none focus:border-[#FF4D00]"
+              className="w-full bg-transparent py-8 text-2xl md:text-4xl font-black uppercase focus:outline-none placeholder:opacity-20 italic"
             />
+            <button className="absolute right-0 bottom-8 hover:text-[#FF4D00] transition-colors">
+              <ChevronRight size={64} strokeWidth={3} />
+            </button>
           </div>
         </div>
       </footer>
@@ -130,4 +156,4 @@ const SomaSoulStudioJT = () => {
   );
 };
 
-export default SomaSoulStudioJT;
+export default SomaSoulSeoul;
