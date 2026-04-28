@@ -16,24 +16,33 @@
             padding: 40px; transition: transform 0.8s cubic-bezier(0.82, 0, 0.18, 1);
         }
         .gate-header { font-family: monospace; font-size: 10px; opacity: 0.5; display: flex; justify-content: space-between; }
-        .gate-title { font-size: 10vw; font-weight: 900; line-height: 0.8; text-transform: uppercase; font-style: italic; }
-        .gate-btn { background: white; color: black; padding: 20px 40px; border-radius: 100px; font-weight: 900; border: none; cursor: pointer; align-self: flex-end; }
+        .gate-title { font-size: 10vw; font-weight: 900; line-height: 0.8; text-transform: uppercase; font-style: italic; margin-top: 40px; }
+        .gate-btn { background: white; color: black; padding: 20px 40px; border-radius: 100px; font-weight: 900; border: none; cursor: pointer; align-self: flex-end; text-transform: uppercase; }
         .gate-btn:hover { background: var(--orange); color: white; }
 
-        /* THE GRID SYSTEM */
-        nav { sticky top: 0; background: var(--bg); border-bottom: 2px solid var(--black); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        /* CONTENT SECTIONS */
+        nav { position: sticky; top: 0; background: var(--bg); border-bottom: 2px solid var(--black); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
         .hero { display: grid; grid-template-columns: 1fr; border-bottom: 2px solid var(--black); }
         @media (min-width: 768px) { .hero { grid-template-columns: 7fr 5fr; } }
-        .hero-left { padding: 60px; border-right: 2px solid var(--black); min-height: 60vh; display: flex; flex-direction: column; justify-content: space-between; }
+        
+        .hero-left { padding: 60px; border-right: 2px solid var(--black); min-height: 65vh; display: flex; flex-direction: column; justify-content: space-between; }
         .hero-right { display: flex; flex-direction: column; }
-        .box { padding: 40px; border-bottom: 2px solid var(--black); flex: 1; }
+        
+        .box { padding: 40px; border-bottom: 2px solid var(--black); flex: 1; display: flex; flex-direction: column; justify-content: center; }
         .box:last-child { border-bottom: 0; background: var(--black); color: white; }
         
-        .huge-text { font-size: 12vw; font-weight: 900; line-height: 0.75; text-transform: uppercase; font-style: italic; }
-        .marquee { background: var(--orange); padding: 20px 0; border-bottom: 2px solid var(--black); overflow: hidden; white-space: nowrap; }
-        .marquee span { font-size: 30px; font-weight: 900; text-transform: uppercase; display: inline-block; animation: scroll 20s linear infinite; }
+        .huge-text { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; line-height: 0.75; text-transform: uppercase; font-style: italic; }
         
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        /* THE MARQUEE */
+        .marquee { background: var(--orange); padding: 20px 0; border-bottom: 2px solid var(--black); overflow: hidden; white-space: nowrap; }
+        .marquee span { font-size: 30px; font-weight: 900; text-transform: uppercase; display: inline-block; animation: scroll 30s linear infinite; padding-right: 50px; }
+        
+        @keyframes scroll { 
+            from { transform: translateX(0); } 
+            to { transform: translateX(-50%); } 
+        }
+
+        .label { font-size: 10px; font-weight: 900; text-transform: uppercase; margin-bottom: 15px; display: block; }
     </style>
 </head>
 <body>
@@ -41,4 +50,45 @@
     <div id="gatekeeper">
         <div class="gate-header"><span>ACCESS_RESTRICTED</span><span>PROTOCOL 2031</span></div>
         <div class="gate-title">이 계정은<br>모두를 위한 곳이<br>아닙니다.</div>
-        <button class="gate-btn" onclick="document.
+        <div style="max-width: 600px; opacity: 0.8; font-size: 1.2rem;">우리는 편한 육아를 다루지 않습니다. 아이가 이 세상에서 진짜 의미 있는 사람이 되는 구조를 다룹니다.</div>
+        <button class="gate-btn" onclick="document.getElementById('gatekeeper').style.transform='translateY(-100%)'">PROCEED IF YOU AGREE</button>
+    </div>
+
+    <nav>
+        <div style="font-weight:900; font-size:24px; font-style:italic; text-transform:uppercase; letter-spacing: -1px;">Soma Soul Seoul</div>
+        <div style="font-size:10px; font-weight:900; letter-spacing: 2px;">COMING MAY 23</div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-left">
+            <div style="font-weight:900; font-size:10px; background:black; color:white; width:fit-content; padding:4px 10px; letter-spacing: 1px;">SYSTEM_OPERATIONAL</div>
+            <div class="huge-text">Sovereign<br>Growth</div>
+        </div>
+        <div class="hero-right">
+            <div class="box">
+                <span class="label" style="color:var(--orange);">여기는 맞지 않습니다</span>
+                <p style="font-weight:900; font-size:1.5rem; line-height: 1.2;">경쟁은 나쁘다고 가르치고 싶다면<br>학교 미술 시간이 쓸모없다고 느껴진다면</p>
+            </div>
+            <div class="box">
+                <span class="label" style="color:#4ade80;">여기 있어도 됩니다</span>
+                <p style="font-weight:900; font-size:1.5rem; line-height: 1.2;">아이가 넘어지는 걸 지켜볼 수 있는 부모<br>노력의 기쁨과 가치를 아는 부모</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee">
+        <span>PROTOCOL 2031 • SOVEREIGN GROWTH • SOMA SOUL SEOUL • PROTOCOL 2031 • SOVEREIGN GROWTH • SOMA SOUL SEOUL • PROTOCOL 2031 • SOVEREIGN GROWTH • SOMA SOUL SEOUL •</span>
+    </div>
+
+    <section style="padding: 100px 40px; text-align: center; background: white; border-bottom: 2px solid black;">
+        <span class="label">Manifesto</span>
+        <div class="huge-text" style="font-size: 8vw; margin-bottom: 40px;">The Glass Child</div>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.5rem; font-weight: 500; line-height: 1.4; text-align: left;">
+            부모가 모든 것을 대신해 주는 것 — 아이가 할 일이라고는 오직 최고 명문대에 가고 상위권을 유지하는 것뿐인, 결핍 없는 삶. 
+            <br><br>
+            <span style="background: var(--orange); color: white; padding: 0 10px;">하지만 그렇게 자란 아이는 유리와 같습니다.</span> 깨지면 다시 붙지 않아요.
+        </p>
+    </section>
+
+</body>
+</html>
