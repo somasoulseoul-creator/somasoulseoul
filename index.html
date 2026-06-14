@@ -201,7 +201,7 @@ footer{padding:2.6rem 0}
 <section class="founding" id="why">
   <div class="wrap">
     <div class="kicker">WHY SOMA SOUL · 왜 소마소울인가</div>
-    <p class="f-line serif">한국의 교육은 <span class="mark">성취</span>를향해 달려왔고,</p>
+    <p class="f-line serif">한국의 교육은 <span class="mark">성취</span>를 향해 달려왔고,</p>
     <p class="f-line serif">미국의 교육은 <span class="mark">아이의 선택</span>을 존중해 왔습니다.</p>
     <p class="f-line now serif">그리고 신경과학은 그 둘보다 먼저, <span class="mark">아이의 몸</span>을 바라보아야 한다고 말합니다.</p>
   </div>
@@ -236,4 +236,53 @@ footer{padding:2.6rem 0}
     <div class="news-kicker">THE SOMA SOUL LETTER</div>
     <h2>소마소울 레터</h2>
     <p class="sub">아이의 내면을 놓치고 싶지 않은 부모를 위한 레터</p>
-    <p class="body">매주 한 편, 신경과학과 감각의 언어로 다시 읽는 양육 이야기를
+    <p class="body">매주 한 편, 신경과학과 감각의 언어로 다시 읽는 양육 이야기를 전해드립니다.
+      광고도, 자극적인 제목도 없이 — 깊이 읽을 가치가 있는 글만.</p>
+
+    <form class="nl-form" id="nlForm" novalidate>
+      <input type="email" id="nlEmail" placeholder="이메일 주소" autocomplete="email" aria-label="이메일 주소"/>
+      <button type="submit">레터 구독하기</button>
+    </form>
+    <p class="nl-msg" id="nlMsg" role="status" aria-live="polite"></p>
+
+    <p class="nl-foot">소마소울은 아이를 바꾸는 방법보다,
+      아이를 이해하는 문화를 만들고자 합니다.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <a href="https://instagram.com/somasoulseoul" target="_blank" rel="noopener">@somasoulseoul</a>
+    <span>© 2026 소마소울 서울 · Seoul</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('nlForm');
+  var email = document.getElementById('nlEmail');
+  var msg = document.getElementById('nlMsg');
+  var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function subscribe(addr){
+    /* ===== SUPABASE / STIBEE ENDPOINT GOES HERE later ===== */
+    msg.innerHTML = '구독 시스템을 준비 중이에요. 지금은 인스타그램 ' +
+      '<a href="https://instagram.com/somasoulseoul" target="_blank" rel="noopener">@somasoulseoul</a>' +
+      ' DM으로 <b>레터</b>를 보내주시면 가장 먼저 소식을 받아보실 수 있어요. 🌿';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var addr = email.value.trim();
+    if(!valid.test(addr)){
+      msg.textContent = '올바른 이메일 주소를 입력해 주세요.';
+      email.focus();
+      return;
+    }
+    subscribe(addr);
+    email.value = '';
+  });
+})();
+</script>
+</body>
+</html>
