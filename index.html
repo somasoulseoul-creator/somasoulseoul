@@ -21,85 +21,85 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 :root{
-  --paper:#FAF8F3; 
-  --ink:#111110;   
+  --paper:#FAF8F3; /* High-end museum cream */
+  --ink:#111110;   /* Deep premium charcoal */
   --muted:#666259;
-  --gold:#9E824B;  
+  --gold:#9E824B;  /* Muted premium gold */
   --gold-deep:#735E34;
-  --line:rgba(17, 17, 16, 0.06); 
+  --line:rgba(17, 17, 16, 0.06); /* Razor-thin hairline divider */
 }
 body{
   background:var(--paper); color:var(--ink);
-  font-family:'Pretendard',-apple-system,sans-serif;
+  font-family:'Pretendard', -apple-system, sans-serif;
   line-height:1.8; -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1200px; margin:0 auto; padding:0 clamp(1.5rem, 6vw, 4rem)}
+.wrap{max-width:1200px; margin:0 auto; padding:0 clamp(2rem, 8vw, 5rem)}
 
-/* Navigation - Pure Minimalist & Grand Scale */
-nav{position:sticky; top:0; z-index:100; background:rgba(250,248,243,.92);
-  backdrop-filter:blur(12px); border-bottom: 1px solid var(--line);}
-.nav-in{display:flex; justify-content:space-between; align-items:center; padding:1.8rem 0}
-.brand{display:flex; align-items:center;}
-.brand img{height:90px; width:auto; display:block; object-fit:contain;} /* Grand Scale Logo */
+/* Navigation - Elegant, Spacious and Razor-Clean */
+nav{position:sticky; top:0; z-index:100; background:rgba(250,248,243,.95);
+  backdrop-filter:blur(15px); border-bottom: 1px solid var(--line);}
+.nav-in{display:flex; justify-content:space-between; align-items:center; padding:2rem 0}
+.brand{display:block; max-width: 240px;}
+.brand img{width:100%; height:auto; display:block;} /* Enforces absolute visibility and scaling */
 .nav-cta{font-size:.75rem; font-weight:600; color:var(--ink); border-bottom:1px solid var(--ink);
-  padding-bottom:.2rem; letter-spacing: .2em; transition: all .3s ease;}
+  padding-bottom:.2rem; letter-spacing: .25em; transition: all .3s ease;}
 .nav-cta:hover{color:var(--gold); border-bottom-color:var(--gold);}
 
-/* Hero Section */
-.hero{padding:clamp(7rem, 14vw, 12rem) 0 clamp(5rem, 10vw, 7rem);}
-.eyebrow{display:block; font-size:.75rem; font-weight:600; letter-spacing:.25em; 
+/* Hero Section - Poetic Editorial Rhythm */
+.hero{padding:clamp(8rem, 15vw, 13rem) 0 clamp(6rem, 10vw, 8rem);}
+.eyebrow{display:block; font-size:.75rem; font-weight:600; letter-spacing:.3em; 
   color:var(--gold); margin-bottom:3.5rem; text-transform: uppercase;}
-.hero h1{font-family:'Noto Serif KR', serif; font-size:clamp(2.4rem, 6vw, 4.2rem); 
-  font-weight:300; line-height:1.45; letter-spacing:-.03em; margin-bottom:3.5rem; color: var(--ink);}
-.hero h1 em{font-style:normal; font-weight:400; color: var(--gold-deep); border-bottom: 1px solid var(--gold);}
+.hero h1{font-family:'Noto Serif KR', serif; font-size:clamp(2.4rem, 5.5vw, 4rem); 
+  font-weight:200; line-height:1.5; letter-spacing:-.03em; margin-bottom:3.5rem; color: var(--ink);}
+.hero h1 em{font-style:normal; font-weight:300; color: var(--gold-deep); border-bottom: 1px solid var(--gold);}
 .hero p{font-size:clamp(1.1rem, 2.2vw, 1.35rem); color:var(--muted);
-  max-width:40rem; line-height:2; font-weight: 300;}
+  max-width:42rem; line-height:2; font-weight: 300;}
 .hero p b{color:var(--ink); font-weight:400;}
 
-.hero-btns{margin-top:4rem; display:flex; gap:2rem; flex-wrap:wrap}
+.hero-btns{margin-top:4.5rem; display:flex; gap:2.5rem; flex-wrap:wrap}
 .btn{display:inline-block; font-size:.8rem; font-weight:600; 
-  letter-spacing: .15em; text-transform: uppercase; padding-bottom:.4rem; transition:all .3s ease;}
+  letter-spacing: .18em; text-transform: uppercase; padding-bottom:.4rem; transition:all .3s ease;}
 .btn-fill{color:var(--ink); border-bottom:2px solid var(--ink);}
 .btn-fill:hover{color:var(--gold); border-bottom-color:var(--gold);}
 .btn-line{color:var(--muted); border-bottom:1px solid var(--line);}
 .btn-line:hover{color:var(--ink); border-bottom-color:var(--ink);}
 
 /* Lead Thesis Section */
-.lead{padding:9rem 0; border-top:1px solid var(--line)}
+.lead{padding:10rem 0; border-top:1px solid var(--line)}
 .lead-set{font-size:.75rem; color:var(--gold); font-weight: 600; letter-spacing: .25em; text-transform: uppercase; margin-bottom:2.5rem;}
-.lead-insight{font-family:'Noto Serif KR', serif; font-size:clamp(1.6rem, 4.5vw, 2.6rem); 
-  font-weight:300; line-height:1.65; color:var(--ink); max-width:38rem;}
-.lead-insight em{font-style:normal; color:var(--gold-deep); font-weight: 400;}
+.lead-insight{font-family:'Noto Serif KR', serif; font-size:clamp(1.6rem, 4.5vw, 2.5rem); 
+  font-weight:200; line-height:1.7; color:var(--ink); max-width:40rem;}
+.lead-insight em{font-style:normal; color:var(--gold-deep); font-weight: 300;}
 
 /* Founding Narrative Section */
 .founding{background:#F4F1EA; padding:10rem 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 .kicker{font-size:.75rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:4rem;}
-.f-line{font-family:'Noto Serif KR', serif; font-size:clamp(1.4rem, 3.8vw, 2.3rem); font-weight:300; line-height:1.75; color:var(--muted); margin-bottom: 1.5rem;}
-.f-line.now{color:var(--ink); margin-top: 2.5rem;}
-.f-line .mark{color:var(--ink); font-weight: 400;}
+.f-line{font-family:'Noto Serif KR', serif; font-size:clamp(1.4rem, 3.8vw, 2.2rem); font-weight:200; line-height:1.8; color:var(--muted); margin-bottom: 1.5rem;}
+.f-line.now{color:var(--ink); margin-top: 3rem;}
+.f-line .mark{color:var(--ink); font-weight: 300;}
 .f-line.now .mark{color:var(--gold-deep); border-bottom: 1px solid var(--gold);}
 
-/* Pillars Section - Stripped of boxes for Editorial Look */
+/* Pillars Section - Clean Typography, No Box Containers */
 .pillars{padding:10rem 0;}
 .sec-kicker{font-size:.75rem; font-weight:600; letter-spacing:.25em; color:var(--gold); margin-bottom:1.5rem;}
-.sec-h{font-family:'Noto Serif KR', serif; font-size:clamp(2rem, 4.5vw, 2.8rem); font-weight:300; margin-bottom:2rem;}
+.sec-h{font-family:'Noto Serif KR', serif; font-size:clamp(2rem, 4.5vw, 2.8rem); font-weight:200; margin-bottom:2rem;}
 .sec-note{color:var(--muted); max-width:42rem; margin-bottom:6rem; font-size: 1.15rem; line-height: 1.9; font-weight: 300;}
 
-.p-grid{display:grid; grid-template-columns: 1fr; gap:5rem;}
+.p-grid{display:grid; grid-template-columns: 1fr; gap:6rem;}
 @media(min-width:768px){ .p-grid{grid-template-columns: 1fr 1fr;}}
-.card{border-top:1px solid var(--line); padding-top:2.5rem;}
+.card{border-top:1px solid var(--line); padding-top:3rem;}
 .card .tag{font-size:.7rem; font-weight:600; letter-spacing:.2em; color:var(--gold); margin-bottom:1.5rem; text-transform: uppercase;}
 .card h3{font-family:'Noto Serif KR', serif; font-size:1.6rem; font-weight:300; margin-bottom:1.2rem; color:var(--ink);}
-.card p{color:var(--muted); font-size:1.05rem; line-height:1.85; font-weight: 300;}
+.card p{color:var(--muted); font-size:1.05rem; line-height:1.9; font-weight: 300;}
 
 /* Newsletter Section */
-.news{background:var(--ink); color:#fff; padding:10rem 0;}
+.news{background:var(--ink); color:#fff; padding:11rem 0;}
 .news-kicker{font-size:.75rem; font-weight:600; letter-spacing:.35em; color:var(--gold); margin-bottom:2rem;}
-.news h2{font-family:'Noto Serif KR',serif; font-weight:300; font-size:clamp(2.2rem, 5.5vw, 3.4rem); margin-bottom:1.5rem; letter-spacing: -.01em;}
-.news .sub{color:rgba(255,255,255,0.85); font-size:1.2rem; margin-bottom:2rem; font-family:'Noto Serif KR', serif; font-weight: 300;}
-.news .body{color:rgba(255,255,255,0.45); max-width:36rem; margin-bottom:4.5rem; font-weight: 300; line-height: 2; font-size: 1.05rem;}
+.news h2{font-family:'Noto Serif KR',serif; font-weight:200; font-size:clamp(2.2rem, 5.5vw, 3.2rem); margin-bottom:1.5rem; letter-spacing: -.01em;}
+.news .sub{color:rgba(255,255,255,0.85); font-size:1.2rem; margin-bottom:2rem; font-family:'Noto Serif KR', serif; font-weight: 200;}
+.news .body{color:rgba(255,255,255,0.45); max-width:36rem; margin-bottom:5rem; font-weight: 300; line-height: 2; font-size: 1.05rem;}
 
 .nl-form{display:flex; gap:0; flex-wrap:wrap; max-width:35rem; border-bottom: 1px solid rgba(255,255,255,0.15);}
 .nl-form input{flex:1; background: transparent; padding:1.2rem 0.5rem; border:none; font-size:1.05rem; color:#fff; font-family: inherit; font-weight: 200;}
