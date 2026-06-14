@@ -14,19 +14,19 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;700&display=swap" rel="stylesheet"/>
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 :root{
-  --paper:#FAF8F3; /* High-end museum cream */
-  --ink:#111110;   /* Deep premium charcoal */
+  --paper:#FAF8F3; 
+  --ink:#111110;   
   --muted:#666259;
-  --gold:#9E824B;  /* Muted premium gold */
+  --gold:#9E824B;  
   --gold-deep:#735E34;
-  --line:rgba(17, 17, 16, 0.06); /* Razor-thin hairline divider */
+  --line:rgba(17, 17, 16, 0.06); 
 }
 body{
   background:var(--paper); color:var(--ink);
@@ -37,25 +37,40 @@ body{
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1200px; margin:0 auto; padding:0 clamp(2rem, 8vw, 5rem)}
 
-/* Navigation - Elegant, Spacious and Razor-Clean */
+/* Navigation - Spacious Luxury Scale */
 nav{position:sticky; top:0; z-index:100; background:rgba(250,248,243,.95);
   backdrop-filter:blur(15px); border-bottom: 1px solid var(--line);}
-.nav-in{display:flex; justify-content:space-between; align-items:center; padding:2rem 0}
-.brand{display:block; max-width: 240px;}
-.brand img{width:100%; height:auto; display:block;} /* Enforces absolute visibility and scaling */
+.nav-in{display:flex; justify-content:space-between; align-items:center; padding:1.8rem 0}
+.brand{display:flex; align-items:center; min-height: 70px;}
+.brand img{height:76px; width:auto; display:block; object-fit:contain;} 
 .nav-cta{font-size:.75rem; font-weight:600; color:var(--ink); border-bottom:1px solid var(--ink);
   padding-bottom:.2rem; letter-spacing: .25em; transition: all .3s ease;}
 .nav-cta:hover{color:var(--gold); border-bottom-color:var(--gold);}
 
-/* Hero Section - Poetic Editorial Rhythm */
+/* Hero Section - Asymmetric Editorial Layout */
 .hero{padding:clamp(8rem, 15vw, 13rem) 0 clamp(6rem, 10vw, 8rem);}
 .eyebrow{display:block; font-size:.75rem; font-weight:600; letter-spacing:.3em; 
-  color:var(--gold); margin-bottom:3.5rem; text-transform: uppercase;}
-.hero h1{font-family:'Noto Serif KR', serif; font-size:clamp(2.4rem, 5.5vw, 4rem); 
-  font-weight:200; line-height:1.5; letter-spacing:-.03em; margin-bottom:3.5rem; color: var(--ink);}
-.hero h1 em{font-style:normal; font-weight:300; color: var(--gold-deep); border-bottom: 1px solid var(--gold);}
+  color:var(--gold); margin-bottom:4rem; text-transform: uppercase;}
+
+/* Customized Core Copy Hierarchy */
+.hero h1{font-family:'Noto Serif KR', serif; font-size:clamp(1.8rem, 4vw, 2.6rem); 
+  font-weight:200; line-height:1.6; letter-spacing:-0.03em; margin-bottom:4rem; color: var(--ink);}
+.hero h1 span.accent-point {
+  display: block;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.3;
+  margin-top: 1.5rem;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.hero h1 span.accent-point em {
+  font-style: normal;
+  color: var(--gold-deep);
+}
+
 .hero p{font-size:clamp(1.1rem, 2.2vw, 1.35rem); color:var(--muted);
-  max-width:42rem; line-height:2; font-weight: 300;}
+  max-width:42rem; line-height:2; font-weight: 300; letter-spacing: -0.01em;}
 .hero p b{color:var(--ink); font-weight:400;}
 
 .hero-btns{margin-top:4.5rem; display:flex; gap:2.5rem; flex-wrap:wrap}
@@ -70,34 +85,34 @@ nav{position:sticky; top:0; z-index:100; background:rgba(250,248,243,.95);
 .lead{padding:10rem 0; border-top:1px solid var(--line)}
 .lead-set{font-size:.75rem; color:var(--gold); font-weight: 600; letter-spacing: .25em; text-transform: uppercase; margin-bottom:2.5rem;}
 .lead-insight{font-family:'Noto Serif KR', serif; font-size:clamp(1.6rem, 4.5vw, 2.5rem); 
-  font-weight:200; line-height:1.7; color:var(--ink); max-width:40rem;}
-.lead-insight em{font-style:normal; color:var(--gold-deep); font-weight: 300;}
+  font-weight:200; line-height:1.7; color:var(--ink); max-width:40rem; letter-spacing: -0.02em;}
+.lead-insight em{font-style:normal; color:var(--gold-deep); font-weight: 400;}
 
 /* Founding Narrative Section */
 .founding{background:#F4F1EA; padding:10rem 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 .kicker{font-size:.75rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:4rem;}
-.f-line{font-family:'Noto Serif KR', serif; font-size:clamp(1.4rem, 3.8vw, 2.2rem); font-weight:200; line-height:1.8; color:var(--muted); margin-bottom: 1.5rem;}
+.f-line{font-family:'Noto Serif KR', serif; font-size:clamp(1.4rem, 3.8vw, 2.2rem); font-weight:200; line-height:1.8; color:var(--muted); margin-bottom: 1.5rem; letter-spacing: -0.01em;}
 .f-line.now{color:var(--ink); margin-top: 3rem;}
 .f-line .mark{color:var(--ink); font-weight: 300;}
 .f-line.now .mark{color:var(--gold-deep); border-bottom: 1px solid var(--gold);}
 
-/* Pillars Section - Clean Typography, No Box Containers */
+/* Pillars Section */
 .pillars{padding:10rem 0;}
 .sec-kicker{font-size:.75rem; font-weight:600; letter-spacing:.25em; color:var(--gold); margin-bottom:1.5rem;}
-.sec-h{font-family:'Noto Serif KR', serif; font-size:clamp(2rem, 4.5vw, 2.8rem); font-weight:200; margin-bottom:2rem;}
+.sec-h{font-family:'Noto Serif KR', serif; font-size:clamp(2rem, 4.5vw, 2.8rem); font-weight:200; margin-bottom:2rem; letter-spacing: -0.02em;}
 .sec-note{color:var(--muted); max-width:42rem; margin-bottom:6rem; font-size: 1.15rem; line-height: 1.9; font-weight: 300;}
 
 .p-grid{display:grid; grid-template-columns: 1fr; gap:6rem;}
 @media(min-width:768px){ .p-grid{grid-template-columns: 1fr 1fr;}}
 .card{border-top:1px solid var(--line); padding-top:3rem;}
 .card .tag{font-size:.7rem; font-weight:600; letter-spacing:.2em; color:var(--gold); margin-bottom:1.5rem; text-transform: uppercase;}
-.card h3{font-family:'Noto Serif KR', serif; font-size:1.6rem; font-weight:300; margin-bottom:1.2rem; color:var(--ink);}
+.card h3{font-family:'Noto Serif KR', serif; font-size:1.6rem; font-weight:300; margin-bottom:1.2rem; color:var(--ink); letter-spacing: -0.01em;}
 .card p{color:var(--muted); font-size:1.05rem; line-height:1.9; font-weight: 300;}
 
 /* Newsletter Section */
 .news{background:var(--ink); color:#fff; padding:11rem 0;}
 .news-kicker{font-size:.75rem; font-weight:600; letter-spacing:.35em; color:var(--gold); margin-bottom:2rem;}
-.news h2{font-family:'Noto Serif KR',serif; font-weight:200; font-size:clamp(2.2rem, 5.5vw, 3.2rem); margin-bottom:1.5rem; letter-spacing: -.01em;}
+.news h2{font-family:'Noto Serif KR',serif; font-weight:200; font-size:clamp(2.2rem, 5.5vw, 3.2rem); margin-bottom:1.5rem; letter-spacing: -.02em;}
 .news .sub{color:rgba(255,255,255,0.85); font-size:1.2rem; margin-bottom:2rem; font-family:'Noto Serif KR', serif; font-weight: 200;}
 .news .body{color:rgba(255,255,255,0.45); max-width:36rem; margin-bottom:5rem; font-weight: 300; line-height: 2; font-size: 1.05rem;}
 
@@ -121,7 +136,7 @@ footer{padding:5rem 0; border-top: 1px solid var(--line);}
 <nav>
   <div class="wrap nav-in">
     <a class="brand" href="#top">
-      <img src="https://www.somasoulseoul.com/logo.png" alt="SOMA SOUL SEOUL"/>
+      <img src="https://www.somasoulseoul.com/logo.png" alt="SOMA SOUL SEOUL" width="240" height="76" style="display:block; min-width:200px; min-height:60px;"/>
     </a>
     <div class="nav-right">
       <a class="nav-cta" href="#letter">JOURNAL SUBSCRIPTION</a>
@@ -132,7 +147,11 @@ footer{padding:5rem 0; border-top: 1px solid var(--line);}
 <header class="hero" id="top">
   <div class="wrap">
     <span class="eyebrow">Sensory-Led Spine · 소마틱스</span>
-    <h1>아이의 진정한 발달은<br>주입식 교육이나 돈으로 살수 있는게 아니라<br><em>먼저, 몸에서 시작됩니다.</em></h1>
+    <h1>
+      아이의 진정한 발달은<br>
+      주입식 교육이나 돈으로 살수 있는게 아니라<br>
+      <span class="accent-point">먼저, <em>몸</em>에서 시작됩니다.</span>
+    </h1>
     <p>신경과학은 명확히 말합니다. 아이에게 진정 필요한 것은 더 많은 정보와 자극이 아니라, <b>스스로를 조절할 수 있는 신경계의 안정</b>입니다.</p>
     <div class="hero-btns">
       <a class="btn btn-fill" href="#letter">레터 구독하기</a>
