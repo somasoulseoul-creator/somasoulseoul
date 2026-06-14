@@ -1,365 +1,239 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
-    <title>소마소울 서울 | SOMA SOUL SEOUL</title>
-    <meta name="description" content="신경과학으로 다시 읽는 양육. 아이에게 정말 필요한 건 더 많은 자극이 아니라, 스스로를 조절하는 힘입니다."/>
-    <meta name="keywords" content="소마소울, 소마소울 서울, 아동 발달, 신경과학 양육, 육아, Waldorf, 아동 심리"/>
-    <meta name="author" content="SOMA SOUL SEOUL"/>
-    <link rel="canonical" href="https://www.somasoulseoul.com/"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>소마소울 서울 | SOMA SOUL SEOUL</title>
+<meta name="description" content="신경과학으로 다시 읽는 양육. 아이에게 정말 필요한 건 더 많은 자극이 아니라, 스스로를 조절하는 힘입니다. — 소마소울 서울"/>
 
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="소마소울 서울 | 감각으로 자라는 아이"/>
-    <meta property="og:description" content="신경과학으로 다시 읽는 양육. 아이에게 정말 필요한 건 더 많은 자극이 아니라, 스스로를 조절하는 힘입니다."/>
-    <meta property="og:image" content="https://www.somasoulseoul.com/logo.png"/>
-    <meta property="og:url" content="https://www.somasoulseoul.com/"/>
-    <meta property="og:site_name" content="소마소울 서울"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="소마소울 서울 | 감각으로 자라는 아이"/>
+<meta property="og:description" content="신경과학으로 다시 읽는 양육. 아이에게 정말 필요한 건 더 많은 자극이 아니라, 스스로를 조절하는 힘입니다."/>
+<meta property="og:image" content="https://somasoulseoul.com/logo.png"/>
+<meta property="og:url" content="https://somasoulseoul.com"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="소마소울 서울 | 감각으로 자라는 아이"/>
+<meta name="twitter:description" content="신경과학으로 다시 읽는 양육."/>
+<meta name="twitter:image" content="https://somasoulseoul.com/logo.png"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;700&display=swap" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;700&display=swap"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --paper:#FAF8F3;
+  --ink:#171712;
+  --muted:#7C766A;
+  --gold:#BE9A4D;
+  --gold-deep:#8A6F30;
+  --gold-soft:#F2ECDC;
+  --line:#E6DFCD;
+}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Pretendard',-apple-system,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:'Noto Serif KR',serif;font-style:normal}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:980px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;border-radius:4px}
 
-    <style>
-        /* Modern Premium Reset */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.9);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0}
+.brand{display:flex;align-items:center;gap:.6rem}
+.brand img{height:42px;width:auto;display:block}
+.brand-lock{display:flex;flex-direction:column;line-height:1.08}
+.brand-en{font-size:.82rem;font-weight:800;letter-spacing:.14em}
+.brand-ko{font-size:.62rem;font-weight:500;letter-spacing:.04em;color:var(--muted)}
+.nav-cta{background:var(--ink);color:#fff;font-size:.78rem;font-weight:600;
+  padding:.5rem 1.1rem;border-radius:100px;transition:background .2s}
+.nav-cta:hover{background:var(--gold);color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:1.6rem}
+.nav-links{display:none}
+.nav-links a{font-size:.72rem;font-weight:600;letter-spacing:.13em;
+  color:var(--muted);text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+@media(min-width:760px){.nav-links{display:flex;gap:2rem}}
 
-        html {
-            scroll-behavior: smooth;
-            text-size-adjust: none;
-            -webkit-text-size-adjust: none;
-        }
+/* hero */
+.hero{padding:clamp(3.5rem,9vw,7rem) 0 clamp(3rem,7vw,5.5rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.74rem;
+  font-weight:600;letter-spacing:.04em;color:var(--gold-deep);margin-bottom:1.6rem}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero h1{font-size:clamp(2.4rem,7.5vw,5.25rem);font-weight:800;line-height:1.12;
+  letter-spacing:-.03em;margin-bottom:1.5rem;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--gold-deep)}
+.hero p{font-size:clamp(1rem,2.2vw,1.18rem);color:var(--muted);
+  max-width:34rem;line-height:1.8}
+.hero p b{color:var(--ink);font-weight:600}
+.hero-btns{margin-top:2.4rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 1.7rem;border-radius:100px;
+  font-size:.92rem;font-weight:600;transition:transform .18s,background .2s,border-color .2s}
+.btn-fill{background:var(--ink);color:#fff}
+.btn-fill:hover{background:var(--gold);color:var(--ink);transform:translateY(-1px)}
+.btn-line{border:1.5px solid var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--gold);transform:translateY(-1px)}
 
-        :root {
-            --paper: #FAF8F3;
-            --ink: #111110;
-            --muted: #666259;
-            --gold: #9E824B;
-            --gold-deep: #735E34;
-            --line: rgba(17, 17, 16, 0.06);
-            
-            --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-            --font-serif: 'Noto Serif KR', Georgia, serif;
-            
-            --max-width: 1200px;
-        }
+/* lead — personal thesis under hero */
+.lead{border-top:1px solid var(--line)}
+.lead .wrap{padding:clamp(2.8rem,6vw,4.5rem) clamp(1.25rem,5vw,3rem)}
+.lead-set{font-size:clamp(.95rem,2vw,1.1rem);color:var(--muted);margin-bottom:.95rem}
+.lead-insight{font-size:clamp(1.4rem,4vw,2.1rem);font-weight:700;line-height:1.55;
+  letter-spacing:-.01em;color:var(--ink);max-width:26ch}
+.lead-insight em{font-style:normal;color:var(--gold-deep)}
 
-        body {
-            background-color: var(--paper);
-            color: var(--ink);
-            font-family: var(--font-sans);
-            font-size: 16px;
-            line-height: 1.8;
-            letter-spacing: -0.01em;
-            word-break: keep-all;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+/* founding narrative — signature */
+.founding{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--gold-soft)}
+.founding .wrap{padding:clamp(3.5rem,8vw,6rem) clamp(1.25rem,5vw,3rem)}
+.founding .kicker{font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold-deep);margin-bottom:2rem}
+.f-line{font-size:clamp(1.35rem,4vw,2.3rem);font-weight:700;line-height:1.5;
+  letter-spacing:-.01em;color:var(--muted)}
+.f-line + .f-line{margin-top:.5rem}
+.f-line.now{color:var(--ink)}
+.f-line .mark{color:var(--ink)}
+.f-line.now .mark{color:var(--gold-deep)}
 
-        #top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 1px;
-            width: 1px;
-            overflow: hidden;
-        }
+/* pillars */
+.pillars{padding:clamp(3.5rem,8vw,6rem) 0}
+.sec-kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.sec-h{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;letter-spacing:-.02em;
+  margin-bottom:.6rem}
+.sec-note{color:var(--muted);max-width:34rem;margin-bottom:2.6rem}
+.p-grid{display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media(min-width:720px){.p-grid{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:clamp(1.6rem,3.5vw,2.2rem);transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.card .tag{font-size:.74rem;font-weight:600;letter-spacing:.04em;color:var(--gold);
+  margin-bottom:.9rem}
+.card h3{font-size:1.3rem;font-weight:700;margin-bottom:.7rem}
+.card p{color:var(--muted);font-size:.98rem;line-height:1.75}
 
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 300;
-            letter-spacing: -0.03em;
-            line-height: 1.4;
-        }
+/* newsletter */
+.news{background:var(--ink);color:#fff}
+.news .wrap{padding:clamp(3.5rem,8vw,6rem) clamp(1.25rem,5vw,3rem)}
+.news-kicker{font-size:.72rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.news h2{font-family:'Noto Serif KR',serif;font-weight:500;
+  font-size:clamp(1.9rem,5vw,2.8rem);letter-spacing:-.01em;margin-bottom:.7rem}
+.news .sub{color:rgba(255,255,255,.7);font-size:1.02rem;margin-bottom:.5rem}
+.news .body{color:rgba(255,255,255,.6);max-width:32rem;margin-bottom:2rem;line-height:1.8}
+.nl-form{display:flex;gap:.7rem;flex-wrap:wrap;max-width:30rem}
+.nl-form input{flex:1 1 14rem;padding:.9rem 1.1rem;border:none;border-radius:100px;
+  font-size:.95rem;font-family:inherit;color:var(--ink)}
+.nl-form button{background:var(--gold);color:var(--ink);border:none;padding:.9rem 1.7rem;
+  border-radius:100px;font-size:.95rem;font-weight:700;font-family:inherit;
+  cursor:pointer;transition:opacity .2s}
+.nl-form button:hover{opacity:.9}
+.nl-msg{margin-top:1.1rem;font-size:.94rem;line-height:1.7;color:#fff;
+  min-height:1.2rem}
+.nl-msg a{color:var(--paper);text-decoration:underline;font-weight:600}
+.nl-foot{margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.15);
+  font-size:.86rem;color:rgba(255,255,255,.55);line-height:1.7}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+/* footer */
+footer{padding:2.6rem 0}
+.foot-in{display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;flex-wrap:wrap;font-size:.84rem;color:var(--muted)}
+.foot-in a:hover{color:var(--gold-deep)}
 
-        /* Premium Header Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(250, 248, 243, 0.9);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--line);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 1.25rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            color: var(--muted);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        /* Hero Editorial Section */
-        .hero {
-            padding: 12rem 2rem 8rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            border-bottom: 1px solid var(--line);
-        }
-
-        .hero-tag {
-            font-family: var(--font-serif);
-            color: var(--gold);
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            max-width: 800px;
-            margin-bottom: 2rem;
-            color: var(--ink);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--muted);
-            max-width: 600px;
-            font-weight: 300;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-        }
-
-        /* Corporate Luxury Button */
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--ink);
-            color: var(--paper);
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            font-weight: 500;
-            border: 1px solid var(--ink);
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--ink);
-        }
-
-        /* Multi-Column Value Section */
-        .features {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 8rem 2rem;
-            display: grid;
-            grid-template-columns: repeat(3, 100fr);
-            gap: 4rem;
-        }
-
-        @media (max-width: 768px) {
-            .features {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 5rem 2rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-
-        .feature-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .feature-num {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            color: var(--gold);
-            opacity: 0.5;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 1rem;
-            color: var(--ink);
-        }
-
-        .feature-card p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Statement Banner */
-        .statement-banner {
-            background-color: #111110;
-            color: var(--paper);
-            padding: 8rem 2rem;
-            text-align: center;
-        }
-
-        .statement-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .statement-banner h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--paper);
-        }
-
-        .statement-banner p {
-            color: #A09D95;
-            font-size: 1.05rem;
-            font-weight: 300;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--line);
-            padding: 4rem 2rem;
-            background-color: var(--paper);
-        }
-
-        .footer-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-brand h4 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-brand p {
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-
-        .footer-copyright {
-            font-size: 0.85rem;
-            color: var(--muted);
-            width: 100%;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--line);
-        }
-    </style>
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
 </head>
 <body>
 
-    <div id="top"></div>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img src="/logo.png" alt="SOMA SOUL SEOUL" onerror="this.style.display='none'"/>
+      <span class="brand-lock">
+        <span class="brand-en">SOMA SOUL SEOUL</span>
+        <span class="brand-ko">소마소울 서울</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#why">PHILOSOPHY</a>
+        <a href="#explore">EXPLORE</a>
+        <a href="#letter">LETTER</a>
+      </div>
+      <a class="nav-cta" href="#letter">레터 구독</a>
+    </div>
+  </div>
+</nav>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">SOMA SOUL SEOUL</div>
-            <nav class="nav-links">
-                <a href="#philosophy">철학</a>
-                <a href="#program">프로그램</a>
-                <a href="#contact">문의</a>
-            </nav>
-        </div>
-    </header>
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>SENSORY-LED PARENTING · 감각으로 자라는 아이</span>
+    <h1 class="serif">아이의 발달은 가르침보다 먼저, <em>몸</em>에서 시작됩니다.</h1>
+    <p>신경과학은 말합니다. 아이에게 필요한 것은 더 많은 자극이 아니라,
+      <b>스스로를 조절할 수 있는 신경계의 힘</b>이라고.</p>
+    <div class="hero-btns">
+      <a class="btn btn-fill" href="#letter">레터 구독하기</a>
+      <a class="btn btn-line" href="https://instagram.com/somasoulseoul" target="_blank" rel="noopener">인스타그램 보기</a>
+    </div>
+  </div>
+</header>
 
-    <main>
-        <section class="hero" id="philosophy">
-            <span class="hero-tag">Soma Soul Seoul</span>
-            <h1>신경과학으로 다시 읽는 양육</h1>
-            <p>아이에게 정말 필요한 건 더 많은 자극이 아니라,<br>스스로를 조절하는 힘입니다. 감각의 균형을 통해 스스로 일어서는 발달 시스템을 지향합니다.</p>
-            <a href="#program" class="cta-button">연구 및 프로그램 안내</a>
-        </section>
+<section class="lead">
+  <div class="wrap">
+    <p class="lead-set">한국과 미국, 두 교육 문화를 경험하며 깨달았습니다.</p>
+    <p class="lead-insight serif">아이는 더 밀어야 성장하는 것이 아니라,<br>
+      <em>먼저 안정되어야</em> 성장한다는 것을.</p>
+  </div>
+</section>
 
-        <section class="features" id="program">
-            <div class="feature-card">
-                <div class="feature-num">01</div>
-                <h3>감각 통합과 자율성</h3>
-                <p>무분별한 조기 인지 학습을 지양하고, 아이의 신경계가 자연스럽게 환경을 수용하고 스스로 조절할 수 있는 감각적 기반을 구축합니다.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-num">02</div>
-                <h3>신경과학 기반 설계</h3>
-                <p>뇌의 발달 단계에 맞춘 과학적인 접근법을 제시합니다. 억지로 주입하지 않고, 시기에 맞는 신체적 발달과 정서 안정의 균형을 이끌어냅니다.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-num">03</div>
-                <h3>지속 가능한 교육 환경</h3>
-                <p>가정과 교육 현장이 유기적으로 연결되는 솔루션을 제안합니다. 일회성 자극을 넘어 아이의 전 생애적 발달을 지탱할 내면의 힘을 기릅니다.</p>
-            </div>
-        </section>
+<section class="founding" id="why">
+  <div class="wrap">
+    <div class="kicker">WHY SOMA SOUL · 왜 소마소울인가</div>
+    <p class="f-line serif">한국의 교육은 <span class="mark">성취</span>를향해 달려왔고,</p>
+    <p class="f-line serif">미국의 교육은 <span class="mark">아이의 선택</span>을 존중해 왔습니다.</p>
+    <p class="f-line now serif">그리고 신경과학은 그 둘보다 먼저, <span class="mark">아이의 몸</span>을 바라보아야 한다고 말합니다.</p>
+  </div>
+</section>
 
-        <section class="statement-banner">
-            <div class="statement-container">
-                <h2>감각으로 자라는 아이</h2>
-                <p>아이들의 진정한 성장은 가속된 인지 교육이 아닌, 단단한 신체적 감각과 정서적 안정감 위에서 시작됩니다. 소마소울 서울이 제안하는 미래 교육의 기준입니다.</p>
-            </div>
-        </section>
-    </main>
+<section class="pillars" id="explore">
+  <div class="wrap">
+    <div class="sec-kicker">WHAT WE EXPLORE</div>
+    <h2 class="sec-h serif">소마소울이 바라보는 성장</h2>
+    <p class="sec-note">소마소울은 아이의 행동을 다른 시선으로 바라봅니다.
+      하나는 감각과 신경계의 관점, 다른 하나는 우리가 너무 오래
+      당연하게 여겨온 양육의 기준입니다.</p>
+    <div class="p-grid">
+      <article class="card">
+        <div class="tag">SENSORY SERIES · 감각 시리즈</div>
+        <h3 class="serif">행동 너머의 감각을 읽다</h3>
+        <p>아이의 행동을 문제로 보기 전에, 그 행동을 만들어낸
+          감각의 언어를 먼저 이해합니다.</p>
+      </article>
+      <article class="card">
+        <div class="tag">SYSTEM CRITIQUE · 시스템 비평</div>
+        <h3 class="serif">익숙한 양육을 다시 질문하다</h3>
+        <p>우리는 오랫동안 정답이라 믿어온 양육의 기준을
+          다시 들여다봅니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h4>소마소울 서울</h4>
-                <p>신경과학 기반의 아동 발달 및 교육 철학 연구 파트너</p>
-            </div>
-            <div class="footer-brand">
-                <p>문의: info@somasoulseoul.com</p>
-                <p>웹사이트: www.somasoulseoul.com</p>
-            </div>
-            <div class="footer-copyright">
-                &copy; 2026 SOMA SOUL SEOUL. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+<section class="news" id="letter">
+  <div class="wrap">
+    <div class="news-kicker">THE SOMA SOUL LETTER</div>
+    <h2>소마소울 레터</h2>
+    <p class="sub">아이의 내면을 놓치고 싶지 않은 부모를 위한 레터</p>
+    <p class="body">매주 한 편, 신경과학과 감각의 언어로 다시 읽는 양육 이야기를
